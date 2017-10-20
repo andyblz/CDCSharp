@@ -133,6 +133,7 @@ namespace Animalistic
 
         public void ShowStats()
         {
+            Console.WriteLine("\n");
             Console.BackgroundColor = ConsoleColor.Magenta;
             Console.ForegroundColor = ConsoleColor.Black;
             Console.WriteLine("{0}'S CURRENT STATS:", name);
@@ -147,6 +148,7 @@ namespace Animalistic
             Canine victim = target as Canine;
             if (victim != null)
             {
+                Console.WriteLine("\n");
                 Console.BackgroundColor = ConsoleColor.Magenta;
                 Console.ForegroundColor = ConsoleColor.Black;
                 Console.WriteLine("{0}'S CURRENT STATS:", victim.name);

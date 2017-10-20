@@ -9,6 +9,7 @@ namespace Animalistic
             {
                 strength = 20;
                 stamina = 40;
+                Console.WriteLine("\n");
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("Welcome, {0}! You're a Tiger.", name);
                 Console.ResetColor();

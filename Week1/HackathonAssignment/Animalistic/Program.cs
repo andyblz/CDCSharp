@@ -12,6 +12,8 @@ namespace Animalistic
             Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine("W E L C O M E   T O   A N I M A L I S T I C !");
             Console.ResetColor();
+
+            Console.WriteLine("\n");
             
             // Start the game!
             Controller.StartGame();

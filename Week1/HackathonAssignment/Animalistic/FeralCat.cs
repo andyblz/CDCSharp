@@ -9,6 +9,7 @@ namespace Animalistic
             {
                 strength = 10;
                 stamina = 20;
+                Console.WriteLine("\n");
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("Welcome, {0}! You're a Feral Cat.", name);
                 Console.ResetColor();

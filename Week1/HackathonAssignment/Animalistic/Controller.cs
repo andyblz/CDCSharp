@@ -119,6 +119,7 @@ namespace Animalistic
         {
             if (player is Canine)
             {
+                Console.WriteLine("\n");
                 Console.BackgroundColor = ConsoleColor.Blue;
                 Console.WriteLine("PICK AN ACTION: Bite, Dodge, Rest");
                 Console.ResetColor();
@@ -126,6 +127,7 @@ namespace Animalistic
             }
             else 
             {
+                Console.WriteLine("\n");
                 Console.BackgroundColor = ConsoleColor.Blue;
                 Console.WriteLine("PICK AN ACTION: Bite, Claw, Dodge, Rest");
                 Console.ResetColor();
@@ -209,16 +211,19 @@ namespace Animalistic
         // Quit game.
         public static void QuitGame()
         {
+            Console.WriteLine("\n");
             Console.BackgroundColor = ConsoleColor.Blue;
             Console.WriteLine("AW, YOU'RE LEAVING? :(");
             Console.WriteLine("G A M E   E N D E D .");
             Console.ResetColor();
+            Console.WriteLine("\n");            
             Environment.Exit(0);
         }
 
         // Game over.
         public static void GameOver()
         {
+            Console.WriteLine("\n");            
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("G A M E   O V E R !");
             Console.ResetColor();
@@ -255,25 +260,31 @@ namespace Animalistic
 
             if (random == 1)
             {
+                Console.WriteLine("\n");      
                 Console.BackgroundColor = ConsoleColor.DarkGreen;
                 Console.WriteLine("YOU'RE PLAYING AGAIN HUSKY BOT!");
                 Console.ResetColor();
+                Console.WriteLine("\n");       
                 Husky newHusky = new Husky("Husky Bot");
                 return newHusky;
             }
             else if (random == 2)
             {
+                Console.WriteLine("\n");     
                 Console.BackgroundColor = ConsoleColor.DarkGreen;
                 Console.WriteLine("YOU'RE PLAYING AGAINST HYENA BOT!");
                 Console.ResetColor();
+                Console.WriteLine("\n");   
                 Hyena newHyena = new Hyena("Hyena Bot");
                 return newHyena;
             }
             else
             {
+                Console.WriteLine("\n");   
                 Console.BackgroundColor = ConsoleColor.DarkGreen;
                 Console.WriteLine("YOU'RE PLAYING AGAINST WOLF BOT!");
                 Console.ResetColor();
+                Console.WriteLine("\n");   
                 Wolf newWolf = new Wolf("Wolf Bot");
                 return newWolf;
             }
@@ -287,25 +298,31 @@ namespace Animalistic
 
             if (random == 1)
             {
+                Console.WriteLine("\n");   
                 Console.BackgroundColor = ConsoleColor.DarkGreen;
                 Console.WriteLine("YOU'RE PLAYING AGAINST FERAL CAT BOT!");
                 Console.ResetColor();
+                Console.WriteLine("\n");  
                 FeralCat newFeralCat = new FeralCat("Feral Cat Bot");
                 return newFeralCat;
             }
             else if (random == 2)
             {
+                Console.WriteLine("\n");   
                 Console.BackgroundColor = ConsoleColor.DarkGreen;
                 Console.WriteLine("YOU'RE PLAYING AGAINST CHEETAH BOT!");
                 Console.ResetColor();
+                Console.WriteLine("\n");  
                 Cheetah newCheetah = new Cheetah("Cheetah Bot");
                 return newCheetah;
             }
             else
             {
+                Console.WriteLine("\n");
                 Console.BackgroundColor = ConsoleColor.DarkGreen;
                 Console.WriteLine("YOU'RE PLAYING AGAINST TIGER BOT!");
                 Console.ResetColor();
+                Console.WriteLine("\n");    
                 Tiger newTiger = new Tiger("Tiger Bot");
                 return newTiger;
             }

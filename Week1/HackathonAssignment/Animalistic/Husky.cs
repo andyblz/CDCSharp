@@ -9,6 +9,7 @@ namespace Animalistic
             {
                 strength = 15;
                 stamina = 50;
+                Console.WriteLine("\n");
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("Welcome, {0}! You're a Husky.", name);
                 Console.ResetColor();

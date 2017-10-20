@@ -9,6 +9,7 @@ namespace Animalistic
             {
                 strength = 15;
                 stamina = 30;
+                Console.WriteLine("\n");
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("Welcome, {0}! You're a Hyena.", name);
                 Console.ResetColor();
