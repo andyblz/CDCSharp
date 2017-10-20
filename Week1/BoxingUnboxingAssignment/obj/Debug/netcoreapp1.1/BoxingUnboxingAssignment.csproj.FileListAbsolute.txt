@@ -1,0 +1,8 @@
+C:\Users\Jennifer\Documents\CodingDojo\C#\Week1\BoxingUnboxingAssignment\bin\Debug\netcoreapp1.1\BoxingUnboxingAssignment.deps.json
+C:\Users\Jennifer\Documents\CodingDojo\C#\Week1\BoxingUnboxingAssignment\bin\Debug\netcoreapp1.1\BoxingUnboxingAssignment.runtimeconfig.json
+C:\Users\Jennifer\Documents\CodingDojo\C#\Week1\BoxingUnboxingAssignment\bin\Debug\netcoreapp1.1\BoxingUnboxingAssignment.runtimeconfig.dev.json
+C:\Users\Jennifer\Documents\CodingDojo\C#\Week1\BoxingUnboxingAssignment\bin\Debug\netcoreapp1.1\BoxingUnboxingAssignment.dll
+C:\Users\Jennifer\Documents\CodingDojo\C#\Week1\BoxingUnboxingAssignment\bin\Debug\netcoreapp1.1\BoxingUnboxingAssignment.pdb
+C:\Users\Jennifer\Documents\CodingDojo\C#\Week1\BoxingUnboxingAssignment\obj\Debug\netcoreapp1.1\BoxingUnboxingAssignment.AssemblyInfo.cs
+C:\Users\Jennifer\Documents\CodingDojo\C#\Week1\BoxingUnboxingAssignment\obj\Debug\netcoreapp1.1\BoxingUnboxingAssignment.dll
+C:\Users\Jennifer\Documents\CodingDojo\C#\Week1\BoxingUnboxingAssignment\obj\Debug\netcoreapp1.1\BoxingUnboxingAssignment.pdb

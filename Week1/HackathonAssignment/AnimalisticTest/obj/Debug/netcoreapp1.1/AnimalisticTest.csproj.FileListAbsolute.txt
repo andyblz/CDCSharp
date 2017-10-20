@@ -1,0 +1,13 @@
+C:\Users\Jennifer\Documents\CodingDojo\C#\Week1\HackathonAssignment\AnimalisticTest\bin\Debug\netcoreapp1.1\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+C:\Users\Jennifer\Documents\CodingDojo\C#\Week1\HackathonAssignment\AnimalisticTest\bin\Debug\netcoreapp1.1\xunit.runner.utility.netstandard15.dll
+C:\Users\Jennifer\Documents\CodingDojo\C#\Week1\HackathonAssignment\AnimalisticTest\bin\Debug\netcoreapp1.1\xunit.runner.reporters.netstandard15.dll
+C:\Users\Jennifer\Documents\CodingDojo\C#\Week1\HackathonAssignment\AnimalisticTest\bin\Debug\netcoreapp1.1\AnimalisticTest.deps.json
+C:\Users\Jennifer\Documents\CodingDojo\C#\Week1\HackathonAssignment\AnimalisticTest\bin\Debug\netcoreapp1.1\AnimalisticTest.runtimeconfig.json
+C:\Users\Jennifer\Documents\CodingDojo\C#\Week1\HackathonAssignment\AnimalisticTest\bin\Debug\netcoreapp1.1\AnimalisticTest.runtimeconfig.dev.json
+C:\Users\Jennifer\Documents\CodingDojo\C#\Week1\HackathonAssignment\AnimalisticTest\bin\Debug\netcoreapp1.1\AnimalisticTest.dll
+C:\Users\Jennifer\Documents\CodingDojo\C#\Week1\HackathonAssignment\AnimalisticTest\bin\Debug\netcoreapp1.1\AnimalisticTest.pdb
+C:\Users\Jennifer\Documents\CodingDojo\C#\Week1\HackathonAssignment\AnimalisticTest\obj\Debug\netcoreapp1.1\AnimalisticTest.AssemblyInfo.cs
+C:\Users\Jennifer\Documents\CodingDojo\C#\Week1\HackathonAssignment\AnimalisticTest\obj\Debug\netcoreapp1.1\AnimalisticTest.dll
+C:\Users\Jennifer\Documents\CodingDojo\C#\Week1\HackathonAssignment\AnimalisticTest\obj\Debug\netcoreapp1.1\AnimalisticTest.pdb
+C:\Users\Jennifer\Documents\CodingDojo\C#\Week1\HackathonAssignment\AnimalisticTest\bin\Debug\netcoreapp1.1\Animalistic.dll
+C:\Users\Jennifer\Documents\CodingDojo\C#\Week1\HackathonAssignment\AnimalisticTest\bin\Debug\netcoreapp1.1\Animalistic.pdb

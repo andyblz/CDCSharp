@@ -1,0 +1,8 @@
+C:\Users\Jennifer\Documents\CodingDojo\C#\Week1\SimpleCRUDAssignment\bin\Debug\netcoreapp1.1\SimpleCRUDAssignment.deps.json
+C:\Users\Jennifer\Documents\CodingDojo\C#\Week1\SimpleCRUDAssignment\bin\Debug\netcoreapp1.1\SimpleCRUDAssignment.runtimeconfig.json
+C:\Users\Jennifer\Documents\CodingDojo\C#\Week1\SimpleCRUDAssignment\bin\Debug\netcoreapp1.1\SimpleCRUDAssignment.runtimeconfig.dev.json
+C:\Users\Jennifer\Documents\CodingDojo\C#\Week1\SimpleCRUDAssignment\bin\Debug\netcoreapp1.1\SimpleCRUDAssignment.dll
+C:\Users\Jennifer\Documents\CodingDojo\C#\Week1\SimpleCRUDAssignment\bin\Debug\netcoreapp1.1\SimpleCRUDAssignment.pdb
+C:\Users\Jennifer\Documents\CodingDojo\C#\Week1\SimpleCRUDAssignment\obj\Debug\netcoreapp1.1\SimpleCRUDAssignment.AssemblyInfo.cs
+C:\Users\Jennifer\Documents\CodingDojo\C#\Week1\SimpleCRUDAssignment\obj\Debug\netcoreapp1.1\SimpleCRUDAssignment.dll
+C:\Users\Jennifer\Documents\CodingDojo\C#\Week1\SimpleCRUDAssignment\obj\Debug\netcoreapp1.1\SimpleCRUDAssignment.pdb

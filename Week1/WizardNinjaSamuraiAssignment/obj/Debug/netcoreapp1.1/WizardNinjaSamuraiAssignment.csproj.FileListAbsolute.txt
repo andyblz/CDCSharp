@@ -1,0 +1,8 @@
+c:\Users\Jennifer\Documents\CodingDojo\C#\Week1\WizardNinjaSamuraiAssignment\bin\Debug\netcoreapp1.1\WizardNinjaSamuraiAssignment.deps.json
+c:\Users\Jennifer\Documents\CodingDojo\C#\Week1\WizardNinjaSamuraiAssignment\bin\Debug\netcoreapp1.1\WizardNinjaSamuraiAssignment.runtimeconfig.json
+c:\Users\Jennifer\Documents\CodingDojo\C#\Week1\WizardNinjaSamuraiAssignment\bin\Debug\netcoreapp1.1\WizardNinjaSamuraiAssignment.runtimeconfig.dev.json
+c:\Users\Jennifer\Documents\CodingDojo\C#\Week1\WizardNinjaSamuraiAssignment\bin\Debug\netcoreapp1.1\WizardNinjaSamuraiAssignment.dll
+c:\Users\Jennifer\Documents\CodingDojo\C#\Week1\WizardNinjaSamuraiAssignment\bin\Debug\netcoreapp1.1\WizardNinjaSamuraiAssignment.pdb
+c:\Users\Jennifer\Documents\CodingDojo\C#\Week1\WizardNinjaSamuraiAssignment\obj\Debug\netcoreapp1.1\WizardNinjaSamuraiAssignment.AssemblyInfo.cs
+c:\Users\Jennifer\Documents\CodingDojo\C#\Week1\WizardNinjaSamuraiAssignment\obj\Debug\netcoreapp1.1\WizardNinjaSamuraiAssignment.dll
+c:\Users\Jennifer\Documents\CodingDojo\C#\Week1\WizardNinjaSamuraiAssignment\obj\Debug\netcoreapp1.1\WizardNinjaSamuraiAssignment.pdb

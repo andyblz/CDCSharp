@@ -1,0 +1,8 @@
+C:\Users\Jennifer\Documents\CodingDojo\C#\Week1\PuzzlesAssignment\bin\Debug\netcoreapp1.1\PuzzlesAssignment.deps.json
+C:\Users\Jennifer\Documents\CodingDojo\C#\Week1\PuzzlesAssignment\bin\Debug\netcoreapp1.1\PuzzlesAssignment.runtimeconfig.json
+C:\Users\Jennifer\Documents\CodingDojo\C#\Week1\PuzzlesAssignment\bin\Debug\netcoreapp1.1\PuzzlesAssignment.runtimeconfig.dev.json
+C:\Users\Jennifer\Documents\CodingDojo\C#\Week1\PuzzlesAssignment\obj\Debug\netcoreapp1.1\PuzzlesAssignment.AssemblyInfo.cs
+C:\Users\Jennifer\Documents\CodingDojo\C#\Week1\PuzzlesAssignment\bin\Debug\netcoreapp1.1\PuzzlesAssignment.dll
+C:\Users\Jennifer\Documents\CodingDojo\C#\Week1\PuzzlesAssignment\bin\Debug\netcoreapp1.1\PuzzlesAssignment.pdb
+C:\Users\Jennifer\Documents\CodingDojo\C#\Week1\PuzzlesAssignment\obj\Debug\netcoreapp1.1\PuzzlesAssignment.dll
+C:\Users\Jennifer\Documents\CodingDojo\C#\Week1\PuzzlesAssignment\obj\Debug\netcoreapp1.1\PuzzlesAssignment.pdb

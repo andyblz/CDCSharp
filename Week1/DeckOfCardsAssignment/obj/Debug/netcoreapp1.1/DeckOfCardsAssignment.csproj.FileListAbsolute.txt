@@ -1,0 +1,8 @@
+C:\Users\Jennifer\Documents\CodingDojo\C#\Week1\DeckOfCardsAssignment\bin\Debug\netcoreapp1.1\DeckOfCardsAssignment.deps.json
+C:\Users\Jennifer\Documents\CodingDojo\C#\Week1\DeckOfCardsAssignment\bin\Debug\netcoreapp1.1\DeckOfCardsAssignment.runtimeconfig.json
+C:\Users\Jennifer\Documents\CodingDojo\C#\Week1\DeckOfCardsAssignment\bin\Debug\netcoreapp1.1\DeckOfCardsAssignment.runtimeconfig.dev.json
+C:\Users\Jennifer\Documents\CodingDojo\C#\Week1\DeckOfCardsAssignment\bin\Debug\netcoreapp1.1\DeckOfCardsAssignment.dll
+C:\Users\Jennifer\Documents\CodingDojo\C#\Week1\DeckOfCardsAssignment\bin\Debug\netcoreapp1.1\DeckOfCardsAssignment.pdb
+C:\Users\Jennifer\Documents\CodingDojo\C#\Week1\DeckOfCardsAssignment\obj\Debug\netcoreapp1.1\DeckOfCardsAssignment.AssemblyInfo.cs
+C:\Users\Jennifer\Documents\CodingDojo\C#\Week1\DeckOfCardsAssignment\obj\Debug\netcoreapp1.1\DeckOfCardsAssignment.dll
+C:\Users\Jennifer\Documents\CodingDojo\C#\Week1\DeckOfCardsAssignment\obj\Debug\netcoreapp1.1\DeckOfCardsAssignment.pdb
