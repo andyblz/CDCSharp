@@ -1,0 +1,46 @@
+body {
+    text-align: center;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.home_photo {
+    width: 300px;
+}
+
+.project {
+    border: 1px solid black;
+    width: 60%;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.project_photo, .project p {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.project_photo {
+    width: 200px;
+}
+
+.project p {
+    width: 400px;
+}
+
+.form-group {
+    width: 50%;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 10px;
+}
+
+.form-control {
+    width: 50%;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.btn {
+    margin: 10px;
+}

@@ -1,0 +1,16 @@
+C:\Users\Jennifer\Documents\CodingDojo\C#\Week2\CallingCardAssignment\bin\Debug\netcoreapp1.1\CallingCardAssignment.deps.json
+C:\Users\Jennifer\Documents\CodingDojo\C#\Week2\CallingCardAssignment\bin\Debug\netcoreapp1.1\CallingCardAssignment.runtimeconfig.json
+C:\Users\Jennifer\Documents\CodingDojo\C#\Week2\CallingCardAssignment\bin\Debug\netcoreapp1.1\CallingCardAssignment.runtimeconfig.dev.json
+C:\Users\Jennifer\Documents\CodingDojo\C#\Week2\CallingCardAssignment\bin\Debug\netcoreapp1.1\CallingCardAssignment.dll
+C:\Users\Jennifer\Documents\CodingDojo\C#\Week2\CallingCardAssignment\bin\Debug\netcoreapp1.1\CallingCardAssignment.pdb
+C:\Users\Jennifer\Documents\CodingDojo\C#\Week2\CallingCardAssignment\obj\Debug\netcoreapp1.1\CallingCardAssignment.AssemblyInfo.cs
+C:\Users\Jennifer\Documents\CodingDojo\C#\Week2\CallingCardAssignment\obj\Debug\netcoreapp1.1\CallingCardAssignment.dll
+C:\Users\Jennifer\Documents\CodingDojo\C#\Week2\CallingCardAssignment\obj\Debug\netcoreapp1.1\CallingCardAssignment.pdb
+C:\Users\Jennifer\Documents\CodingDojo\C#\Week2\CallingCardAssignment\CallingCardAssignment\bin\Debug\netcoreapp1.1\CallingCardAssignment.deps.json
+C:\Users\Jennifer\Documents\CodingDojo\C#\Week2\CallingCardAssignment\CallingCardAssignment\bin\Debug\netcoreapp1.1\CallingCardAssignment.runtimeconfig.json
+C:\Users\Jennifer\Documents\CodingDojo\C#\Week2\CallingCardAssignment\CallingCardAssignment\bin\Debug\netcoreapp1.1\CallingCardAssignment.runtimeconfig.dev.json
+C:\Users\Jennifer\Documents\CodingDojo\C#\Week2\CallingCardAssignment\CallingCardAssignment\bin\Debug\netcoreapp1.1\CallingCardAssignment.dll
+C:\Users\Jennifer\Documents\CodingDojo\C#\Week2\CallingCardAssignment\CallingCardAssignment\bin\Debug\netcoreapp1.1\CallingCardAssignment.pdb
+C:\Users\Jennifer\Documents\CodingDojo\C#\Week2\CallingCardAssignment\CallingCardAssignment\obj\Debug\netcoreapp1.1\CallingCardAssignment.AssemblyInfo.cs
+C:\Users\Jennifer\Documents\CodingDojo\C#\Week2\CallingCardAssignment\CallingCardAssignment\obj\Debug\netcoreapp1.1\CallingCardAssignment.dll
+C:\Users\Jennifer\Documents\CodingDojo\C#\Week2\CallingCardAssignment\CallingCardAssignment\obj\Debug\netcoreapp1.1\CallingCardAssignment.pdb

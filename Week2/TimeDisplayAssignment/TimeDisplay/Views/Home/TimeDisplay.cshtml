@@ -1,0 +1,14 @@
+@{
+    ViewData["Title"] = "Time Display";
+}
+
+<h1 style="text-align: center;">THE CURRENT TIME &amp; DATE:</h1>
+
+<div style="text-align: center; border: 2px solid black; width: 50%; margin: 0 auto;">
+    @{
+        DateTime CurrentTime = DateTime.Now;
+        var timeDisplay = CurrentTime.ToString("MMM dd, yyyy hh:mm tt");
+        <h2>@timeDisplay</h2>
+    }
+</div>
+
