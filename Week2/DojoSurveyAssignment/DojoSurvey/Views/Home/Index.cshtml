@@ -1,0 +1,47 @@
+﻿<html>
+    <head>
+        <title>Dojo Survey Assignment</title>
+        <link rel="stylesheet" href="~/css/style.css"/>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    </head>
+    <body>
+        <div id="dojo_survey">
+            @foreach(var error in ViewBag.Errors)
+            {
+                <p class="errors">@error</p>
+            }
+            
+            <form action="/result" method="post">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="Your Name" name="name">
+
+                    <label for="dojo_location">Dojo Location</label>
+                    <select class="form-control" name="dojo_location">
+                        <option>San Jose</option>
+                        <option>Seattle</option>
+                        <option>Texas</option>
+                    </select>
+
+                    <label for="fav_lang">Favorite Language</label>
+                    <select class="form-control" name="fav_lang">
+                        <option>JavaScript</option>
+                        <option>Python</option>
+                        <option>C#</option>
+                    </select>
+
+                    <label for="comment">Comment (optional)</label>
+                    <textarea class="form-control" placeholder="Your Comment" rows="3" name="comment"></textarea>
+
+                    <div class="button">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    </body>
+</html>

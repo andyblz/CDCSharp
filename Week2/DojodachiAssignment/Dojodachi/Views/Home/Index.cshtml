@@ -1,0 +1,44 @@
+﻿<html>
+    <head>
+        <title>Dojodachi</title>
+        <link rel="stylesheet" href="~/css/style.css"/>
+        <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div class="stats">
+            <p><span class="bold">Happiness</span>: @ViewBag.Happiness</p>
+            <p><span class="bold">Fullness</span>: @ViewBag.Fullness</p>
+            <p><span class="bold">Energy</span>: @ViewBag.Energy</p>
+            <p><span class="bold">Meals</span>: @ViewBag.Meals</p>
+        </div>
+
+        <div class="dojodachi">
+            <img src="@ViewBag.Photo" class="pet"/>
+            <p class="bold">@ViewBag.Message</p>
+        </div>
+
+        <div class="action">
+            <form action="/Action" method="post">
+                <button type="submit" class="btn" name="playAction" value="feed">FEED</button>
+                <button type="submit" class="btn" name="playAction" value="play">PLAY</button>
+                <button type="submit" class="btn" name="playAction" value="work">WORK</button>
+                <button type="submit" class="btn" name="playAction" value="sleep">SLEEP</button>
+            </form>
+        </div>
+
+        <form action="/Reset" method="get" class="restart">
+            <button type="submit" class="btn restart">RESTART</button>
+        </form>
+
+        <script>
+            $(document).ready(function() {
+                var session = "@ViewBag.Session";
+                console.log(session);
+                if (session == "NotInSession") {
+                    $(".action").toggle();
+                    $(".restart").toggle();
+                }
+            })
+        </script>
+    </body>
+</html>

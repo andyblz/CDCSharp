@@ -1,0 +1,43 @@
+body {
+    width: 80%;
+    margin: 0 auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    padding: 30px;
+}
+
+.stats p {
+    display: inline-block;
+    margin: 10px;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.dojodachi {
+    border: 2px solid black;
+    width: 50%;
+    margin: 10px auto;
+    height: 40%;
+}
+
+.pet {
+    margin: 20px;
+    width: 150px;
+    height: 150px;
+}
+
+.action form {
+    display: inline-block;
+}
+
+.btn {
+    padding: 10px;
+    font-size: 16px;
+    margin: 10px;
+}
+
+.restart {
+    display: none;
+}
