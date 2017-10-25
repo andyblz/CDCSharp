@@ -1,0 +1,37 @@
+/*Write all of your CSS here*/
+
+h1 {
+    text-align: center;
+}
+
+.form_submit {
+    width: 50%;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+}
+
+.form_submit p {
+    font-weight: bold;
+}
+
+.form_submit input {
+    width: 200px;
+    margin: 0 auto 10px auto;
+}
+
+.form_submit input, .btn {
+    display: block;
+}
+
+.btn {
+    width: 20%;
+    margin: 20px auto 0 auto;
+}
+
+span {
+    color: red;
+    text-size: 8px;
+    margin-bottom: 5px;
+}

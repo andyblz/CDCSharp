@@ -1,0 +1,30 @@
+/*Write all of your CSS here*/
+
+h1 {
+    text-align: center;
+}
+
+.post_note {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.note_title, .note_desc, .btn {
+    display: block;
+}
+
+.note_title, .note_desc {
+    width: 50%;
+    margin: 10px auto;
+}
+
+.btn {
+    margin: 10px auto;
+}
+
+.post_it {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
+}

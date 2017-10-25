@@ -1,0 +1,13 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+
+<h1>Ajax Notes Assignment</h1>
+
+<form action="/post" method="post" class="post_note">
+    <input type="text" name="title" placeholder="Insert Note Title Here" class="note_title">
+    <textarea name="desc" placeholder="Insert Note Description Here" class="note_desc" rows="5"></textarea>
+    <button type="submit" class="btn">ADD NOTE</button>
+</form>
