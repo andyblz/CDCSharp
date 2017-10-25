@@ -1,0 +1,25 @@
+<html>
+    <head>
+        @{
+            ViewData["Title"] = "Home Page";
+        }
+        <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <article class="pokedex">
+            <h1>POKEDEX</h1>
+            <h4>Enter a Pokemon ID to generate that Pokemon's info.</h4>
+            <form action="pokemon" method="get" class="pokedex_form">
+                <p>Pokemon ID:</p>
+                <input type="number" min="1" max="151" name="pokeid" placeholder="Select an ID" class="id_input">
+                <button type="submit" class="btn">SUBMIT</button>
+            </form>
+        </article>
+
+        <article class="pokemon"></article>
+
+        <script>
+        </script>
+    </body>
+</html>
+

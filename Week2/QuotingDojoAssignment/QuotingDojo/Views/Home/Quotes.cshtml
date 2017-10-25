@@ -1,0 +1,18 @@
+@{
+    ViewData["Title"] = "Quotes Page";
+}
+
+<div class="main">
+    <h1>HERE ARE THE AWESOME QUOTES!</h1>
+
+    @{
+        foreach(var userquote in @ViewBag.Quotes) {
+            <article class="user_quote">
+                <p class="quote">'@userquote["quote"]'</p>
+                <p>- @userquote["name"] at @userquote["created_at"].Date.ToString("h:mmtt MMMM dd yyyy")</p>
+            </article>
+        }
+
+    }
+
+</div>

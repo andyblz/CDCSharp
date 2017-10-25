@@ -1,0 +1,28 @@
+/*Write all of your CSS here*/
+
+.main {
+    width: 80%;
+    margin: 30px auto;
+    padding: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+}
+
+.main p {
+    margin: 20px 0;
+}
+
+.btn {
+    margin: 10px;
+    padding: 10px;
+}
+
+.user_quote {
+    width: 50%;
+    margin: 0 auto;
+    border-bottom: 1px solid black;
+}
+
+.quote {
+    font-weight: bold;
+}
