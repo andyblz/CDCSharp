@@ -7,9 +7,11 @@
 ### 2. Inside **Main** Folder
   + Inside the **main** folder, CP `yo candyman <appName>`.
   + Go into the **app** folder, and inside **appName.csproj**, add the following code to setup Watcher tool:  
-  >`<ItemGroup>`  
-  >  `<DotNetCliToolReference Include="Microsoft.DotNet.Watcher.Tools" Version="1.0.0"/>`  
-  > `</ItemGroup>`
+  ```  
+  <ItemGroup>   
+  <DotNetCliToolReference Include="Microsoft.DotNet.Watcher.Tools" Version="1.0.0"/>  
+  </ItemGroup>  
+  ```
   + CP `set ASPNETCORE_ENVIRONMENT=Development`.
   + CP `dotnet restore`.
 
@@ -22,7 +24,7 @@
   + CP `dotnet add package MySql.Data -v 7.0.7-*`.
   + CP `dotnet add package System.Data.SqlClient -v 4.1.0-*`.
   + Create a **DbConnection.cs**, and add this block of code to it:
-  >    
+  > ```   
   > using System.Collections.Generic;
   > using System.Data;
   > using MySql.Data.MySqlClient;
@@ -82,4 +84,5 @@
   >      }
   >  }
   > }
+  > ```
 
