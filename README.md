@@ -7,9 +7,9 @@
 ### 2. Inside **Main** Folder
   + Inside the **main** folder, `yo candyman <appName>`.
   + Inside **<appName>.csproj**, add the following code:  
-  `<ItemGroup>  
-    <DotNetCliToolReference Include="Microsoft.DotNet.Watcher.Tools" Version="1.0.0"/>  
-   </ItemGroup>`
+  `<ItemGroup>`  
+    `<DotNetCliToolReference Include="Microsoft.DotNet.Watcher.Tools" Version="1.0.0"/>`  
+   `</ItemGroup>`
 
 ### 3. Inside **Test** Folder
   + `dotnet new xunit`.
