@@ -40,7 +40,7 @@
   >              return new MySqlConnection($"Server={server};Port={port};Database={db};UserID={user};Password={pass};SslMode=None");
   >          }
   >      }
-        
+  >        
   >      //This method runs a query and stores the response in a list of dictionary records
   >      public static List<Dictionary<string, object>> Query(string queryString)
   >      {
