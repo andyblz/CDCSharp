@@ -83,6 +83,7 @@
             }
         }
     }
-   }
+ }
    ```
+  + Inside **YourController.cs**, add `using DbConnection;`.
 
