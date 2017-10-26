@@ -140,4 +140,5 @@ namespace YourNamespace.Controllers
     <button type="submit">Create new User</button>
 </form>
   ```
-
+  + To add Partials, in your **Example.cshtml**, add `@Html.Partial("ExampleModel")`.
+  + To add your model to your Partial, add `@model LoginRegistration.Models.Login`.
