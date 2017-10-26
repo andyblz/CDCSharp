@@ -87,3 +87,6 @@
    ```
   + Inside **YourController.cs**, add `using DbConnection;`.
 
+### 5. Using Model Binding & Validations
+  + In your model validation **.cs** page, add `using System.ComponentModel.DataAnnotations;`.
+
