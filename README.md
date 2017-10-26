@@ -6,10 +6,10 @@
 
 ### 2. Inside **Main** Folder
   + Inside the **main** folder, CP `yo candyman <appName>`.
-  + Go into the **app** folder, and inside **appName.csproj**, add the following code:  
-  `<ItemGroup>`  
-    `<DotNetCliToolReference Include="Microsoft.DotNet.Watcher.Tools" Version="1.0.0"/>`  
-   `</ItemGroup>`
+  + Go into the **app** folder, and inside **appName.csproj**, add the following code to setup Watcher tool:  
+  >`<ItemGroup>`  
+  >  `<DotNetCliToolReference Include="Microsoft.DotNet.Watcher.Tools" Version="1.0.0"/>`  
+  > `</ItemGroup>`
   + CP `set ASPNETCORE_ENVIRONMENT=Development`.
 
 ### 3. Inside **Test** Folder
