@@ -89,4 +89,55 @@
 
 ### 5. Using Model Binding & Validations
   + In your model validation **.cs** page, add `using System.ComponentModel.DataAnnotations;`.
+  + In your model, **Example.cs**:
+  ```
+using System.ComponentModel.DataAnnotations;
+ 
+namespace YourNamespace.Models
+{
+    public class Product : BaseEntity
+    {
+         [Required]
+         [MinLength(2)]
+         public string Name { get; set; }
+ 
+         [Required]
+         public double Price { get; set; }
+    }
+}
+ ```
+  + In your controller, **YourController.cs**:
+  ```
+namespace YourNamespace.Controllers
+{
+    [Route("RouteName")]
+    public IActionResult Register(User user)
+    {
+        if(ModelState.IsValid)
+        {
+            //Handle success
+        }
+        return View(user);
+    }
+}
+  ```
+  + In your HTML, **Example.cshtml**:
+  ```
+@model YourNamespace.Models.User
+<form asp-controller="User" asp-action="Register" method="post">
+    <span asp-validation-for="FirstName"></span>
+    <label asp-for="FirstName"></label>
+    <input asp-for="FirstName"/>
+    <span asp-validation-for="LastName"></span>
+    <label asp-for="LastName"></label>
+    <input asp-for="LastName"/>
+    <span asp-validation-for="Email"></span>
+    <label asp-for="Email"></label>
+    <input asp-for="Email"/>
+    <span asp-validation-for="Password"></span>
+    <label asp-for="Password"></label>
+    <input asp-for="Password"/>
+    <button type="submit">Create new User</button>
+</form>
+  ```
 
