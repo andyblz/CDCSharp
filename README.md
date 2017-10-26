@@ -22,6 +22,7 @@
   + CP `dotnet add package MySql.Data -v 7.0.7-*`.
   + CP `dotnet add package System.Data.SqlClient -v 4.1.0-*`.
   + Create a **DbConnection.cs**, and add this block of code to it:
+  >    
   > using System.Collections.Generic;
   > using System.Data;
   > using MySql.Data.MySqlClient;
