@@ -61,14 +61,14 @@ Created a login & registration page, that utilizes session, MySQL, model binding
 **NOT COMPLETE.**
 
 ### PokeInfoAssignment
-A user can input a Pokemon ID, and the form will grab information from the PokeApi. The form will then redirect to another page that displays that Pokemon's information.
+A user can input a Pokemon ID, and the form will grab information from the PokeApi. The form will then redirect to another page that displays that Pokemon's information.  
 **NOT COMPLETE. Does not utilize AJAX, and does not display multiple Types.**
 
 ### PortfolioAssignment
 Created a portfolio containing three pages that utilizes routing with a navbar, and styling.
 
 ### QuotingDojoAssignment
-Created an app that adds a user's name and quote submission to the database, and displays all the quotes in the database. Utilizes connecting to a MySQL database.
+Created an app that adds a user's name and quote submission to the database, and displays all the quotes in the database. Utilizes connecting to a MySQL database.  
 **NOT COMPLETE. Datetime shows 12AM regardless of submission datetime.**
 
 ### RApiAssignment
@@ -76,7 +76,7 @@ Working with LINQ and returning JSON, and routing.
 
 ### RandomPasscodeAssignment
 Created an app that will generate a random passcode each time you click the button. It should randomize the passcode, as well as keep track of the number of times a random passcode has been generated. This utilizes session and redirecting routes.  
-**NOT COMPLETE. Does not utilize AJAX**
+**NOT COMPLETE. Does not utilize AJAX.**
 
 ### TheWallAssignment
 **NOT COMPLETE.**
