@@ -1,4 +1,5 @@
 # ASP.NET CORE REFERENCE
+Reference to self for how to set up an ASP.NET CORE app.
 
 ### 1. Setup App
   + Make a **main** folder.
