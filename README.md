@@ -1,4 +1,4 @@
-# ASPNETCORE REFERENCE
+# ASP.NET CORE REFERENCE
 
 #### 1. Setup App
   + Make a **main** folder.
@@ -10,4 +10,4 @@
 #### 3. Inside **Test** Folder
   + `dotnet new xunit`.
   + `dotnet add reference ../<appName>/<appName>.csproj`.
-  + Inside the `Unit1Test.cs`, add `using <appName>;` and `using <appName>.Controllers;`.
+  + Inside the **Unit1Test.cs**, add `using <appName>;` and `using <appName>.Controllers;`.
