@@ -36,8 +36,7 @@ Created an app that adds a user's name and quote submission to the database, and
 Working with LINQ and returning JSON, and routing.
 
 ### RandomPasscodeAssignment
-Created an app that will generate a random passcode each time you click the button. It should randomize the passcode, as well as keep track of the number of times a random passcode has been generated. This utilizes session and redirecting routes.  
-**NOT COMPLETE. Does not utilize AJAX.**
+Created an app that will generate a random passcode each time you click the button. It should randomize the passcode, as well as keep track of the number of times a random passcode has been generated. This utilizes session and redirecting routes.
 
 ### TheWallAssignment
 Created a website where a user can login or register. Once logged in, the user can post messages to the wall, as well as comment on other users' messages. A user can delete their own comment or message if it has been within half an hour of it being posted. If a user deletes their message, all comments under that message will also be deleted. The user can toggle the comment button to show/hide the comment form.  

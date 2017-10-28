@@ -2,43 +2,25 @@
     <head>
         <title>Random Passcode Assignment</title>
         <link rel="stylesheet" href="~/css/style.css"/>
-        <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
-        <script>
-            /*
-            $(document).ready(function(){
-                $(".submit").submit(function(event){
-                    event.preventDefault();
-                    
-                    $.ajax({
-                        type: "POST",
-                        url: "/Home/Ajax",
-                        data: '{passcode: "' + $(".passcode").val() + '" }',
-                        dataType: "json",
-                        success: function (response) {
-                            $('.passcode').html(result);
-                        },
-                    })
-                    
-                    var Passcode = "@ViewBag.Passcode";
-                    var Count = @ViewBag.Count;
-                    $.ajax({
-                        url: "/",
-                        success: function(serverResponse) { 
-                            $('.passcode').html(`<h1>` + Passcode + `</h1>`);
-                            $(".counter").html(Count);
-                        }
-                    });
-                    
-                })
-            })
-            */
-        </script>
     </head>
     <body>
-        <h2>Random Passcode (passcode # <span class="counter">@ViewBag.Count</span>)</h2>
-        <div class="passcode"><h1>@ViewBag.Passcode</h1></div>
-        <form action="" class="submit">
+        <h2>Random Passcode (passcode # <span class="counter"></span>)</h2>
+        <div class="passcode"><h1></h1></div>
+        <form action="" class="submit-form">
             <button type="submit" class="btn">Generate</button>
         </form>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+        <script>
+            $(document).ready(function(){
+                $(document).on("submit", ".submit-form", function(event) {
+                    event.preventDefault();
+                    $.post("/ajax", $(".submit-form").serialize(), function(result) {
+                        $(".counter").html(`${result.count}`);
+                        $(".passcode").html(`<h1>${result.passcode}</h1>`);
+                    });
+                });
+            });
+        </script>
     </body>
 </html>
