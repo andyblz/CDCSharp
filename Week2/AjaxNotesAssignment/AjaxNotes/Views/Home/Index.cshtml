@@ -2,12 +2,49 @@
     ViewData["Title"] = "Home Page";
 }
 
-<script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
-
 <h1>Ajax Notes Assignment</h1>
 
-<form action="/post" method="post" class="post_note">
-    <input type="text" name="title" placeholder="Insert Note Title Here" class="note_title">
-    <textarea name="desc" placeholder="Insert Note Description Here" class="note_desc" rows="5"></textarea>
+<form class="post-note">
+    <input type="text" name="title" placeholder="Insert Note Title Here" class="note-title">
+    <textarea name="desc" placeholder="Insert Note Description Here" class="note-desc" rows="5"></textarea>
     <button type="submit" class="btn">ADD NOTE</button>
 </form>
+
+<div class="note-content"></div>
+
+
+@section Scripts
+{
+    <script>
+        $(document).ready(function() {
+            $(".note-content").text("");
+            $.get("/showposts", function(result) {
+                for(note of result) {
+                    console.log(note);
+                    displayNote(note);
+                }
+            })
+        })
+
+        $(document).on("submit", ".post-note", function(event) {
+            event.preventDefault();
+            $.post("/post", $(".post-note").serialize(), function(result) {
+                for(note of result)
+                {
+                    console.log(result);
+                    displayNote(note);
+                }
+            })
+        })
+
+
+        function displayNote(note) {
+            $(".note-content").prepend(
+                `<article class="post-it">
+                    <h3>${note.title}</h3>
+                    <p>${note.note}</p>
+                </article>`
+            )
+        }
+    </script>
+}

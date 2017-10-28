@@ -18,16 +18,22 @@ namespace AjaxNotes.Controllers
 
         [HttpPost]
         [Route("/post")]
-        public IActionResult PostNote()
+        public JsonResult PostNote(string title, string desc)
         {
-            return RedirectToAction("ShowPosts");
+            string query = $@"INSERT INTO notes (title, note) VALUES ('{title}', '{desc}')";
+            string query2 = $@"SELECT * FROM notes ORDER BY id DESC LIMIT 1";
+            DbConnector.Execute(query);
+            List<Dictionary<string, object>> NewNote = DbConnector.Query(query2);
+            return Json(NewNote);
         }
 
         [HttpGet]
-        [Route("")]
-        public IActionResult ShowPosts()
+        [Route("/showposts")]
+        public JsonResult ShowPosts()
         {
-            return View("Index");
+            string query = $@"SELECT * FROM notes";
+            List<Dictionary<string, object>> AllNotes = DbConnector.Query(query);
+            return Json(AllNotes);
         }
     }
 }

@@ -4,7 +4,7 @@ h1 {
     text-align: center;
 }
 
-.post_note {
+.post-note {
     width: 50%;
     margin: 0 auto;
     text-align: center;
@@ -12,11 +12,11 @@ h1 {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.note_title, .note_desc, .btn {
+.note-title, .note-desc, .btn {
     display: block;
 }
 
-.note_title, .note_desc {
+.note-title, .note-desc {
     width: 50%;
     margin: 10px auto;
 }
@@ -25,6 +25,11 @@ h1 {
     margin: 10px auto;
 }
 
-.post_it {
+.post-it {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
+    width: 20%;
+    padding: 10px;
+    text-align: center;
+    margin: 20px;
+    display: inline-block;
 }

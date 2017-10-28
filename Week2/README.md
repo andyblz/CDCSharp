@@ -1,6 +1,7 @@
 # WEEK 2
 ### AjaxNotesAssignment
-**NOT COMPLETE.**
+Created an app where the user can create a note, and post it to the wall. Utilizes AJAX.  
+**NOT COMPLETE. Does not include edit or delete note capability, or form validations.**
 
 ### CallingCardAssignment
 Working with returning JSON and routing.
