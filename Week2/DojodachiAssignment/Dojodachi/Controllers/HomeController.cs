@@ -58,7 +58,7 @@ namespace Dojodachi.Controllers
                 HttpContext.Session.SetString("Session", "NotInSession");
                 HttpContext.Session.SetString("Mood", "Happy");                  
             }
-            else if (Fullness == 0 || Happiness == 0)
+            else if (Fullness <= 0 || Happiness <= 0)
             {
                 HttpContext.Session.SetString("Message", "UHHH.. YOU KILLED IT. YOU LOSE! (T____T)");
                 HttpContext.Session.SetString("Mood", "Dead");  
