@@ -1,0 +1,90 @@
+@{
+    ViewData["Title"] = "WELCOME TO THE WALL";
+    Layout = "~/Views/Shared/_WallLayout.cshtml";
+}
+
+@model TheWall.Models.CommentPost
+
+<nav class="navbar">
+    <h1>The Wall</h1>
+    
+    <article class="right-nav">
+        <p>Welcome, @ViewBag.LoggedUser["first_name"]!</p>
+        <a href="/logout">LOGOUT</a>
+    </article>
+</nav>
+
+<div class="container">
+    @Html.Partial("MessagePartial")
+
+    <div class="main-content">
+        @{  
+            foreach(var message in ViewBag.Messages)
+            {
+                <article class="message-post">
+                    <h4>@message["first_name"] @message["last_name"]</h4>
+                    <h5>@message["created_at"]</h5>
+                    <p>@message["message"]</p>
+                    <hr>
+                    @if(message["id"] == ViewBag.LoggedUser["id"])
+                    {
+                        @if((ViewBag.DateTimeNow - message["created_at"]).TotalMinutes < 30)
+                        {
+                            <form action="deletemessage" method="post">
+                                <input type="hidden" name="delete_message" value='@message["message_id"]'/>
+                                <button type="submit" class="delete-message btn">DELETE MESSAGE</button>
+                            </form>
+                        }
+                    }
+                    <button type="submit" class='comment btn comment-@message["message_id"]'>COMMENT</button>
+                </article>
+
+                <article class="comment-section">
+                    @foreach(var comment in ViewBag.Comments)
+                    {
+                        @if(comment["messages_id"] == message["message_id"])
+                        {
+                            <article class="comment-post">
+                                <h5>@comment["first_name"] @comment["last_name"]</h5>
+                                <h6>@comment["created_at"]</h6>
+                                <p>@comment["comment"]</p>
+                                <hr>
+                                @if(comment["id"] == ViewBag.LoggedUser["id"])
+                                {
+                                    @if((ViewBag.DateTimeNow - comment["created_at"]).TotalMinutes < 30)
+                                    {
+                                        <form action="/deletecomment" method="post">
+                                            <input type="hidden" name="delete_comment" value='@comment["comment_id"]'/>
+                                            <button type="submit" class="delete-comment btn">DELETE COMMENT</button>
+                                        </form>
+                                    }
+                                }
+                            </article>
+                        }
+                    }
+                    <form asp-action="PostComment" method="post" class='comment-form comment-form-@message["message_id"]' asp-controller="Wall">
+                        <label for="commentPost">Post A Comment</label> 
+                        <span asp-validation-for="commentPost"></span>
+                        <textarea asp-for="commentPost" class="form-control" rows="3" placeholder="Your Comment"></textarea>
+                        <input type="hidden" asp-for="messageID" value='@message["message_id"]'>
+                        <button type="submit" class="btn">POST COMMENT</button>
+                    </form>
+                </article>
+            }
+        }
+    </div>
+</div>
+
+@section Scripts {
+<script>
+    $(document).ready(function() {
+        @foreach(var message in ViewBag.Messages)
+        {
+            @:$('.comment-@message["message_id"]').click(function() {
+            @:    event.preventDefault()
+            @:    $('.comment-form-@message["message_id"]').toggle();
+            @:})
+        }
+    })
+</script>
+}

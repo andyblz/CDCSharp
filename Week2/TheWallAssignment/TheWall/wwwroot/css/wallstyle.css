@@ -1,0 +1,79 @@
+/* Styling for the navbar */
+.navbar {
+    background-color: rgb(124, 224, 255);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
+    position: fixed;
+    top: 0;
+    left: 0;  
+    width: 100%;
+}
+
+.navbar h1, .navbar p, .navbar a {
+    display: inline-block;
+}
+
+.navbar h1 {
+    margin: 20px 20px;
+    font-weight: bold;
+    float: left;
+}
+
+.right-nav p {
+    margin: 0 30px;
+    font-weight: bold;
+}
+
+.right-nav {
+    float: right;
+    margin: 30px 20px;
+}
+
+/* Styling for the body content */
+
+.container {
+    padding: 20px;
+    margin-top: 120px;
+}
+
+.message-form .btn, .comment-form .btn {
+    margin: 10px 0;
+    float: right;
+}
+
+.message-form span {
+    color: red;
+    font-size: 10px;
+}
+
+.main-content {
+    margin-top: 80px;
+}
+
+.message-post {
+    margin: 40px 0;
+}
+
+.message-post h4, .message-post h5 {
+    font-weight: bold;
+}
+
+.message-post p {
+    margin-left: 20px;
+}
+
+.message-post form {
+    display: inline-block;
+}
+
+.comment-section {
+    margin-left: 40px;
+}
+
+.comment-post h5, .comment-post h6 {
+    font-weight: bold;
+}
+
+.comment-form {
+    display: none;
+    margin: 30px 0;
+}

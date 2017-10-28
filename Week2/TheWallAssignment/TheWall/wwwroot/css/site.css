@@ -1,0 +1,60 @@
+/* Main styling */
+body, html {
+    font-family: 'Catamaran', sans-serif;
+    background-image: url("../images/frankfurt.jpg");
+    height: 100%;
+    color: rgb(80, 80, 80);
+}
+
+h1 {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.65);
+    padding: 20px;   
+    margin-top: 40px; 
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 100%;
+}
+
+#main {
+    text-align: center;
+}
+
+.register-form, .login-form {
+    background-color: rgba(255, 255, 255, 0.65);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 20px;
+    margin: 30px 30px;
+    width: 30%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.register-form label, .login-form label {
+    margin-top: 10px;
+    text-align: left;
+    width: 100%;
+}
+
+.btn {
+    margin: 10px auto 0 auto;
+}
+
+.login-form span, .register-form span {
+    color: red;
+    font-size: 10px;
+    font-weight: normal;
+}
+
+
+
+
+/* jfeng credit link to Github */
+#credit {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.65);
+    padding: 10px;   
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}

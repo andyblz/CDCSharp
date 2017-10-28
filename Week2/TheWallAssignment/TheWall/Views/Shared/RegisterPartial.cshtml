@@ -1,0 +1,25 @@
+@model TheWall.Models.Register
+
+<form asp-action="Register" method="post" class="register-form" asp-controller="Home">
+        <label for="firstName">First Name</label> 
+        <span asp-validation-for="firstName"></span>
+        <input type="text" asp-for="firstName" class="form-control" placeholder="Your First Name"/>
+
+        <label for="lastName">Last Name</label> 
+        <span asp-validation-for="lastName"></span>      
+        <input type="text" asp-for="lastName" class="form-control" placeholder="Your Last Name"/>
+
+        <label for="email">Email</label> 
+        <span asp-validation-for="email"></span>
+        <input type="email" asp-for="email" class="form-control" placeholder="Your Email"/>
+
+        <label for="password">Password</label> 
+        <span asp-validation-for="password"></span>
+        <input type="password" asp-for="password" class="form-control" placeholder="Your Password"/>
+
+        <label for="confirmPassword">Confirm Password</label> 
+        <span asp-validation-for="confirmPassword"></span>
+        <input type="password" asp-for="confirmPassword" class="form-control" placeholder="Confirm Password"/>
+
+        <button type="submit" class="btn btn-primary">REGISTER</button>
+    </form>

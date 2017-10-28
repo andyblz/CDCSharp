@@ -39,7 +39,8 @@ Created an app that will generate a random passcode each time you click the butt
 **NOT COMPLETE. Does not utilize AJAX.**
 
 ### TheWallAssignment
-**NOT COMPLETE.**
+Created a website where a user can login or register. Once logged in, the user can post messages to the wall, as well as comment on other users' messages. A user can delete their own comment or message if it has been within half an hour of it being posted. If a user deletes their message, all comments under that message will also be deleted. The user can toggle the comment button to show/hide the comment form.
+**NOT COMPLETE. Message and comment forms doesnt' display the validation errors.**
 
 ### TimeDisplayAssignment
 Working with rendering views and Razor to display the current date and time.
