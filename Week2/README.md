@@ -22,8 +22,8 @@ Created a login & registration page, that utilizes session, MySQL, model binding
 **NOT COMPLETE.**
 
 ### PokeInfoAssignment
-A user can input a Pokemon ID, and the form will grab information from the PokeApi. The form will then redirect to another page that displays that Pokemon's information.  
-**NOT COMPLETE. Does not utilize AJAX, and does not display multiple Types.**
+A user can input a Pokemon ID, and the form will grab information from the PokeApi. Once the form is submitted, the page displays the Pokemon's information on the same page with the help of AJAX.  
+**NOT COMPLETE. Does not display multiple Types.**
 
 ### PortfolioAssignment
 Created a portfolio containing three pages that utilizes routing with a navbar, and styling.

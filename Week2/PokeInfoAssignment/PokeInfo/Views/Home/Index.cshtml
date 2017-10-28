@@ -9,7 +9,7 @@
         <article class="pokedex">
             <h1>POKEDEX</h1>
             <h4>Enter a Pokemon ID to generate that Pokemon's info.</h4>
-            <form action="pokemon" method="get" class="pokedex_form">
+            <form class="pokedex_form">
                 <p>Pokemon ID:</p>
                 <input type="number" min="1" max="151" name="pokeid" placeholder="Select an ID" class="id_input">
                 <button type="submit" class="btn">SUBMIT</button>
@@ -18,8 +18,27 @@
 
         <article class="pokemon"></article>
 
-        <script>
-        </script>
+        @section Scripts
+        {
+            <script>
+                $(document).ready(function() {
+                    $(document).on("submit", ".pokedex_form", function(event) {
+                        event.preventDefault();
+                        $.post("/pokemon", $(".pokedex_form").serialize(), function(result) {
+                            $(".pokemon").html(`
+                                <h3>NAME: ${result.name}</h3>
+                                <img src="${result.photo}"/>
+                                <p>ID: ${result.id}</p>
+                                <p>PRIMARY TYPE: ${result.primaryType}</p>
+                                <p>HEIGHT: ${result.height}</p>
+                                <p>WEIGHT: ${result.weight}</p>
+                                <p>TYPES: </p>`
+                            )
+                        })
+                    })
+                })
+            </script>
+        }
     </body>
 </html>
 

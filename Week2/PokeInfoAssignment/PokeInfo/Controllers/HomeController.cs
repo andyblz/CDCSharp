@@ -16,9 +16,9 @@ namespace PokeInfo.Controllers
             return View();
         }
 
-        [HttpGet]
-        [Route("pokemon")]
-        public IActionResult QueryPoke(int pokeid)
+        [HttpPost]
+        [Route("/pokemon")]
+        public JsonResult QueryPoke(int pokeid)
         {
             var PokeInfo = new Dictionary<string, object>();
             WebRequest.GetPokemonDataAsync(pokeid, ApiResponse =>
@@ -40,9 +40,7 @@ namespace PokeInfo.Controllers
             dynamic pokeType = PokeInfo["types"];
             newPokemon.PrimaryType = pokeType[0]["type"]["name"];
 
-            ViewBag.PokemonInfo = newPokemon;
-
-            return View();
+            return Json(newPokemon);
         }
     }
 }
