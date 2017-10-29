@@ -1,0 +1,47 @@
+@{
+    ViewData["Title"] = "Trail";
+}
+
+<h1>LOST IN THE WOODS</h1>
+<a href="/" class="link-home">GO HOME</a>
+
+<article class="trail-info">
+    <h2>@ViewBag.Trail.name</h2>
+
+    <h4>DESCRIPTION</h4>
+    <p>@ViewBag.Trail.description</p>
+
+    <h4>TRAIL LENGTH</h4>
+    <p>@ViewBag.Trail.length miles</p>
+
+    <h4>ELEVATION CHANGE</h4>
+    <p>@ViewBag.Trail.elevation feet</p>
+
+    <h4>LONGITUDE</h4>
+    <p>@ViewBag.Trail.longitude
+        @if(ViewBag.Trail.longitude > 0)
+            {
+                <span>&deg;N</span>
+            }
+            else
+            {
+                <span>&deg;S</span>
+            }
+    </p>
+    
+    <h4>LATITUDE</h4>
+    <p>@ViewBag.Trail.latitude
+        @if(ViewBag.Trail.latitude > 0)
+            {
+                <span>&deg;E</span>
+            }
+            else
+            {
+                <span>&deg;W</span>
+            }
+    </p>
+</article>
+
+<article class="google-map">
+    
+</article>

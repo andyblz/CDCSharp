@@ -1,0 +1,48 @@
+.trail-table {
+    padding: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+}
+
+.trail-table th {
+    padding: 10px;
+    text-align: center;
+}
+
+.go-to-add {
+    text-align: right;
+}
+
+.link-home, .header {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#main {
+    text-align: left;
+}
+
+.form-group {
+    width: 50%;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);    
+    padding: 20px;
+}
+
+.form-control {
+    margin-bottom: 20px;
+}
+
+.form-group span {
+    color: red;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.trail-info h4 {
+    margin: 20px 0 0 10px;
+}
+
+.trail-info p {
+    margin: 10px 0 0 20px;
+}

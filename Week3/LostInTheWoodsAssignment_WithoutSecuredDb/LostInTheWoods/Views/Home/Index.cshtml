@@ -1,0 +1,55 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+<h1>LOST IN THE WOODS</h1>
+<p>List of local hiking trails.</p>
+
+<div id="all-trails">
+    <table class="trail-table table table-striped">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col">Trail ID</th>
+                <th scope="col">Trail Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Length</th>
+                <th scope="col">Elevation Change</th>
+                <th scope="col">Longitude</th>
+                <th scope="col">Latitude</th>
+            </tr>
+        </thead>
+        @foreach(var trail in @ViewBag.AllTrails)
+        {
+            <tr>
+                <td>@trail.id</td>
+                <td><a href="/trail/@trail.id">@trail.name</a></td>
+                <td>@trail.description</td>
+                <td>@trail.length miles</td>
+                <td>@trail.elevation feet</td>
+                <td>@trail.longitude
+                    @if(@trail.longitude > 0)
+                    {
+                        <span>&deg;N</span>
+                    }
+                    else
+                    {
+                        <span>&deg;S</span>
+                    }
+                </td>
+                <td>@trail.latitude
+                    @if(@trail.latitude > 0)
+                    {
+                        <span>&deg;E</span>
+                    }
+                    else
+                    {
+                        <span>&deg;W</span>
+                    }
+                </td>
+            </tr>
+        }
+    </table>
+
+    <form action="/add" method="get" class="go-to-add">
+        <button type="submit" class="btn btn-primary">ADD A NEW TRAIL</button>
+    </form>
+</div>
