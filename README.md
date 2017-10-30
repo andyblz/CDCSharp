@@ -145,3 +145,74 @@ namespace YourNamespace.Controllers
 ### 6. Using Partials
   + To add Partials, in your **Example.cshtml**, add `@Html.Partial("ExampleModel")`.
   + To add your model to your Partial, add `@model LoginRegistration.Models.Login`.
+
+
+### 7. Using Dapper
+  + CP `dotnet add package Dapper`.
+  + Create a **Factories** folder.
+  + Create a **Example.cs** file under the **Factories** folder:
+  ```
+using System.Collections.Generic;
+using System.Linq;
+using Dapper;
+using System.Data;
+using MySql.Data.MySqlClient;
+using DapperApp.Models;
+
+
+public void Add(Example item)
+        {
+            using (IDbConnection dbConnection = Connection) {
+                string query =  "INSERT INTO example (user_name, email, password, created_at, updated_at) VALUES (@Name, @Email, @Password, NOW(), NOW())";
+                dbConnection.Open();
+                dbConnection.Execute(query, item);
+            }
+        }
+
+        public IEnumerable<Example> FindAll()
+        {
+            using (IDbConnection dbConnection = Connection)
+            {
+                dbConnection.Open();
+                return dbConnection.Query<Example>("SELECT * FROM example");
+            }
+        }
+
+        public Example FindByID(int id)
+        {
+            using (IDbConnection dbConnection = Connection)
+            {
+                dbConnection.Open();
+                return dbConnection.Query<Example>("SELECT * FROM example WHERE id = @Id", new { Id = id }).FirstOrDefault();
+            }
+        }
+  ```
+  + Call SQL query methods in **YourController.cs**:
+  ```
+// Other namespaces added here.
+using Example.Factory; 
+
+namespace YourNamespace.Controllers
+{
+    public class HomeController : Controller
+    {
+        private readonly ExampleFactory exampleFactory;
+
+        public HomeController()
+        {
+            //Instantiate a ExampleFactory object that is immutable (READONLY)
+            //This establishes the initial DB connection for us.
+            exampleFactory = new ExampleFactory();
+        }
+
+        [HttpGet]
+        [Route("")]
+        public IActionResult Index()
+        {
+            //We can call upon the methods of the exampleFactory directly now.
+            ViewBag.Example = exampleFactory.FindAll();
+            return View();
+        }
+    }
+}
+  ```
