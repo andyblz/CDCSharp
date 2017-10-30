@@ -216,8 +216,8 @@ namespace YourNamespace.Controllers
     }
 }
   ```
-  + Encryption: CP `dotnet add package microsoft.aspnetcore.identity.entityframeworkcore -v=1.1`.
-  + Encryption: Add to **YourController.cs**:
+  + ENCRYPTION: CP `dotnet add package microsoft.aspnetcore.identity.entityframeworkcore -v=1.1`.
+  + ENCRYPTION: Add to **YourController.cs**:
   ```
 // To hash.
 public IActionResult Method(Example example)
@@ -246,7 +246,7 @@ public IActionResult LoginMethod(string Email, string PasswordToCheck)
      //Handle failure
 }
 ```
-  + Relationships: If one (team) to many (players).
+  + RELATIONSHIPS: If one (team) to many (players).
   ```
 // In Model/Player.cs
 public Team team { get; set; }
@@ -254,7 +254,7 @@ public Team team { get; set; }
 // In Model/Teams.cs
 public ICollection<Player> players { get; set; }
   ```
-  + Relationships: Join and select.
+  + RELATIONSHIPS: Join and select.
   ```
 // Get all players on a specific team.
 // Factories/TeamFactory.cs
@@ -291,7 +291,7 @@ public IEnumerable<Player> PlayersForTeamById(int id)
         return myPlayers;
     }
 }
-
+  ```
 
 ### 8. Securing Databases
 
