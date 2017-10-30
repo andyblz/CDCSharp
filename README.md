@@ -216,3 +216,83 @@ namespace YourNamespace.Controllers
     }
 }
   ```
+  + Encryption: CP `dotnet add package microsoft.aspnetcore.identity.entityframeworkcore -v=1.1`.
+  + Encryption: Add to **YourController.cs**:
+  ```
+// To hash.
+public IActionResult Method(Example example)
+{
+     if(ModelState.IsValid)
+     {
+           PasswordHasher<Example> Hasher = new PasswordHasher<Example>();
+           example.Password = Hasher.HashPassword(example, example.Password);
+           //Save your example object to the database
+     }
+}
+// To verify:
+public IActionResult LoginMethod(string Email, string PasswordToCheck)
+{
+     // Attempt to retrieve an example from your database based on the Email submitted
+     var example = exampleFactory.GetUserByEmail(Email);
+     if(example != null && PasswordToCheck != null)
+     {
+           var Hasher = new PasswordHasher<Example>();
+           // Pass the example object, the hashed password, and the PasswordToCheck
+           if(0 != Hasher.VerifyHashedPassword(example, example.Password, PasswordToCheck))
+           {
+                //Handle success
+           }
+     }
+     //Handle failure
+}
+```
+  + Relationships: If one (team) to many (players).
+  ```
+// In Model/Player.cs
+public Team team { get; set; }
+
+// In Model/Teams.cs
+public ICollection<Player> players { get; set; }
+  ```
+  + Relationships: Join and select.
+  ```
+// Get all players on a specific team.
+// Factories/TeamFactory.cs
+public Team FindById(long id)
+{
+    using (IDbConnection dbConnection = Connection)
+    {
+        dbConnection.Open();
+        var query =
+        @"
+        SELECT * FROM teams WHERE id = @Id;
+        SELECT * FROM players WHERE team_id = @Id;
+        ";
+ 
+        using (var multi = dbConnection.QueryMultiple(query, new {Id = id}))
+        {
+            var team = multi.Read<Team>().Single();
+            team.players = multi.Read<Player>().ToList();
+            return team;
+        }
+    }
+}
+
+// Get team associated with player.
+// Factories/PlayerFactory.cs
+public IEnumerable<Player> PlayersForTeamById(int id)
+{
+    using (IDbConnection dbConnection = Connection)
+    {
+        var query = $"SELECT * FROM players JOIN teams ON players.team_id WHERE teams.id = players.team_id AND teams.id = {id}";
+        dbConnection.Open();
+ 
+        var myPlayers = dbConnection.Query<Player, Team, Player>(query, (player, team) => { player.team = team; return player; });
+        return myPlayers;
+    }
+}
+
+
+### 8. Securing Databases
+
+### 9. Using Entity Framework
