@@ -326,9 +326,9 @@ namespace TEMPLATE
   + Add to **.csproj** file:
   ```
 <Project Sdk="Microsoft.NET.Sdk.Web">
-  
+
   <PropertyGroup>
-    
+
     <TargetFramework>netcoreapp1.1</TargetFramework>
 
   </PropertyGroup>
@@ -338,7 +338,6 @@ namespace TEMPLATE
     <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="1.1.2" />
 
     <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="1.1.1" />
-
     <PackageReference Include="Microsoft.AspNetCore.Session" Version="1.1.1" />
 
     <PackageReference Include="Microsoft.AspNetCore.Server.Kestrel" Version="1.1.1" />
@@ -348,21 +347,15 @@ namespace TEMPLATE
     <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="1.1.1" />
 
     <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="1.1" />
-
     <PackageReference Include="MySql.Data" Version="7.0.7-*" />
-
     <PackageReference Include="MySql.Data.EntityFrameworkCore" Version="7.0.7-*" />
-
     <PackageReference Include="System.Data.SqlClient" Version="4.1.0-*" />
-
   </ItemGroup>
 
   <ItemGroup>
 
     <DotNetCliToolReference Include="Microsoft.DotNet.Watcher.Tools" Version="1.0.0" />
-
   </ItemGroup>
-
 </Project>
 ```
   + Add to the **Startup.cs** file:
