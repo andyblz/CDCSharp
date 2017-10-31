@@ -420,9 +420,26 @@ public void ConfigureServices(IServiceCollection services)
        
 }
   ```
+  + Add to **YourController.cs**:
+  ```
+using Microsoft.EntityFrameworkCore;
+
+using TEMPLATE.Models;
+  
+private TEMPLATEContext _context;
+
+public HomeController(TEMPLATEContext context)
+
+{
+
+     _context = context;
+
+}
+  ```
+
 
 ### 9. Using Entity Framework
-  + CP `dotnet add package MySql.Data.EntityFrameworkCore -v 7.0.7-*`  
+  + CP `dotnet add package MySql.Data.EntityFrameworkCore -v 7.0.7-*`.  
   + Add a **TEMPLATEContext.cs** file:
   ```
 using Microsoft.EntityFrameworkCore;
