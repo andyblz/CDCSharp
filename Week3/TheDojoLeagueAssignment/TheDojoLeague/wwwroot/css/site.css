@@ -1,0 +1,29 @@
+#registered-ninjas, #register-ninja, #all-dojos, #register-dojo {
+    display: inline-block;
+    vertical-align: top;
+    width: 45%;
+    padding: 30px;
+    margin: 20px auto;
+}
+
+#registered-ninjas, #all-dojos {
+    border-right: 2px solid black;
+}
+
+.register-ninja input, .register-ninja label, .register-ninja select, .register-dojo input, .register-dojo label {
+    display: block;
+}
+
+#register-ninja input, #register-ninja select, .register-dojo input {
+    margin-bottom: 20px;
+}
+
+.table, .register-ninja {
+    margin: 20px 10px;
+}
+
+form span {
+    color: red;
+    font-size: 12px;
+}
+
