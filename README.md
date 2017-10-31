@@ -369,24 +369,17 @@ namespace TEMPLATE
   ```
 using System;
 using System.Collections.Generic;
-
 using System.Linq;
-
 using Microsoft.AspNetCore.Builder;
-
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
 using Microsoft.Extensions.Configuration;
-
 using Microsoft.AspNetCore.Hosting;
 
 using Microsoft.EntityFrameworkCore;
-
 using MySQL.Data.EntityFrameworkCore;
-
 using MySQL.Data.EntityFrameworkCore.Extensions;
-
 using TEMPLATE.Models;
 
  
@@ -402,7 +395,7 @@ public Startup(IHostingEnvironment env)
 }
 
 public void ConfigureServices(IServiceCollection services)
-        
+
 {
 
       // INFO: For securing db.
@@ -412,12 +405,11 @@ public void ConfigureServices(IServiceCollection services)
       services.AddScoped<TEMPLATEContext>();
 
 
-            
+      
       // INFO: Added this for Entity Framework Core
 
       services.AddDbContext<TEMPLATEContext>(options => options.UseMySQL(Configuration["DBInfo:ConnectionString"]));
 
-       
 }
   ```
   + Add to **YourController.cs**:
@@ -426,6 +418,7 @@ using Microsoft.EntityFrameworkCore;
 using TEMPLATE.Models;
   
 private TEMPLATEContext _context;
+  
 public HomeController(TEMPLATEContext context)
 {
 
