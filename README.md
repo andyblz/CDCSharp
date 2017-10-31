@@ -432,11 +432,10 @@ public HomeController(TEMPLATEContext context)
 
 {
 
-     _context = context;
+   _context = context;
 
 }
   ```
-
 
 ### 9. Using Entity Framework
   + CP `dotnet add package MySql.Data.EntityFrameworkCore -v 7.0.7-*`.  
