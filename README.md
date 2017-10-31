@@ -427,12 +427,10 @@ using Microsoft.EntityFrameworkCore;
 using TEMPLATE.Models;
   
 private TEMPLATEContext _context;
-
 public HomeController(TEMPLATEContext context)
-
 {
 
-   _context = context;
+    _context = context;
 
 }
   ```
