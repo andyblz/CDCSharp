@@ -294,5 +294,150 @@ public IEnumerable<Player> PlayersForTeamById(int id)
   ```
 
 ### 8. Securing Databases
+  + Add to **appsettings.json**:
+  ```
+{
+    "Logging": {
+        "IncludeScopes": false,
+        "LogLevel": {
+            "Default": "Warning"
+        }
+    },
+
+    "DBInfo":
+    {
+        "Name": "MySQLconnect",
+        "ConnectionString": "server=localhost;userid=root;password=root;port=3306;database=DATEBASENAME;SslMode=None"
+    }
+}
+  ```
+  + CP `dotnet add package MySql.Data -v 7.0.7-*`.
+  + Under a **Properties** folder, created a **MySqlOption.cs** file, and add:
+  ```
+namespace TEMPLATE
+{
+    public class MySqlOptions
+    {
+        public string Name { get; set; }
+        public string ConnectionString { get; set; }
+    }
+}
+  ```
+  + Add to **.csproj** file:
+  ```
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  
+  <PropertyGroup>
+    
+    <TargetFramework>netcoreapp1.1</TargetFramework>
+
+  </PropertyGroup>
+
+  <ItemGroup>
+
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="1.1.2" />
+
+    <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="1.1.1" />
+
+    <PackageReference Include="Microsoft.AspNetCore.Session" Version="1.1.1" />
+
+    <PackageReference Include="Microsoft.AspNetCore.Server.Kestrel" Version="1.1.1" />
+
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics" Version="1.1.1" />
+
+    <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="1.1.1" />
+
+    <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="1.1" />
+
+    <PackageReference Include="MySql.Data" Version="7.0.7-*" />
+
+    <PackageReference Include="MySql.Data.EntityFrameworkCore" Version="7.0.7-*" />
+
+    <PackageReference Include="System.Data.SqlClient" Version="4.1.0-*" />
+
+  </ItemGroup>
+
+  <ItemGroup>
+
+    <DotNetCliToolReference Include="Microsoft.DotNet.Watcher.Tools" Version="1.0.0" />
+
+  </ItemGroup>
+
+</Project>
+```
+  + Add to the **Startup.cs** file:
+  ```
+using System;
+using System.Collections.Generic;
+
+using System.Linq;
+
+using Microsoft.AspNetCore.Builder;
+
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
+
+using Microsoft.Extensions.Configuration;
+
+using Microsoft.AspNetCore.Hosting;
+
+using Microsoft.EntityFrameworkCore;
+
+using MySQL.Data.EntityFrameworkCore;
+
+using MySQL.Data.EntityFrameworkCore.Extensions;
+
+using TEMPLATE.Models;
+
+ 
+public IConfiguration Configuration { get; private set; }
+ 
+public Startup(IHostingEnvironment env)
+{
+    var builder = new ConfigurationBuilder()
+    .SetBasePath(env.ContentRootPath)
+    .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+    .AddEnvironmentVariables();
+    Configuration = builder.Build();
+}
+
+public void ConfigureServices(IServiceCollection services)
+        
+{
+
+      // INFO: For securing db.
+
+      services.Configure<MySqlOptions>(Configuration.GetSection("DBInfo"));
+
+      services.AddScoped<TEMPLATEContext>();
+
+
+            
+      // INFO: Added this for Entity Framework Core
+
+      services.AddDbContext<TEMPLATEContext>(options => options.UseMySQL(Configuration["DBInfo:ConnectionString"]));
+
+       
+}
+  ```
 
 ### 9. Using Entity Framework
+  + CP `dotnet add package MySql.Data.EntityFrameworkCore -v 7.0.7-*`  
+  + Add a **TEMPLATEContext.cs** file:
+  ```
+using Microsoft.EntityFrameworkCore;
+
+namespace TEMPLATE.Models
+{
+    public class TEMPLATEContext : DbContext
+    {
+        public TEMPLATEContext(DbContextOptions<TEMPLATEContext> options) : base(options) {}
+
+        // All the SQL tables here.
+        // public DbSet<Author> authors { get; set; }        
+    }
+}
+  ```
+
+### 10. Add Session.
+  + CP `dotnet add package Microsoft.AspNetCore.Session -v=1.1`.
