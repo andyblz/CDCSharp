@@ -335,6 +335,7 @@ namespace TEMPLATE
 
   <ItemGroup>
 
+    <PackageReference Include="microsoft.aspnetcore.identity.entityframeworkcore" Version="1.1" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="1.1.2" />
 
     <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="1.1.1" />
