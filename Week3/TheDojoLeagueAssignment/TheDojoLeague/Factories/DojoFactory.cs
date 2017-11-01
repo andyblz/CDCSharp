@@ -27,8 +27,8 @@ namespace TheDojoLeague.Factories
             using (IDbConnection dbConnection = Connection)
             {
                 dbConnection.Open();
-                string query = $"SELECT name FROM dojos";
-                return dbConnection.Query<Dojo>(query).ToList();
+                string query = $"SELECT * FROM dojos";
+                return dbConnection.Query<Dojo>(query);
             }
         }
 

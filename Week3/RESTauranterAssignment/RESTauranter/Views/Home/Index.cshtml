@@ -1,0 +1,33 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model RESTauranter.Models.ReviewView
+
+<h1>WRITE A NEW REVIEW</h1>
+
+<form asp-controller="Home" asp-action="AddReview" method="post">
+    <label asp-for="reviewer">Reviewer Name</label>
+    <span asp-validation-for="reviewer"></span>
+    <input asp-for="reviewer" class="form-control" placeholder="Your Name"/>
+
+    <label asp-for="restaurantName">Restaurant Name</label>
+    <span asp-validation-for="restaurantName"></span>
+    <input asp-for="restaurantName" class="form-control" placeholder="Restaurant Name"/>
+
+    <label asp-for="review">Review</label>
+    <span asp-validation-for="review"></span>
+    <input asp-for="review" class="form-control" placeholder="Your Review"/>
+
+    <label asp-for="rating">Rating</label>
+    <span asp-validation-for="rating"></span>
+    <select asp-for="rating" class="form-control">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select>
+
+    <button type="submit" class="btn btn-primary">SUBMIT</button>
+</form>

@@ -6,10 +6,6 @@ namespace TheDojoLeague.Models
 {
     public class Dojo
     {
-        public Dojo() {
-            ninjas = new List<Ninja>();
-        }
-
         [Key]
         public long id { get; set; }
 
@@ -19,8 +15,10 @@ namespace TheDojoLeague.Models
         [Required]
         public string location { get; set; }
 
-        public string description { get; set; }
-
         public ICollection<Ninja> ninjas { get; set; }
+
+        public Dojo() {
+            ninjas = new List<Ninja>();
+        }
     }
 }

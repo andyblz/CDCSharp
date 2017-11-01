@@ -1,0 +1,24 @@
+/*Write all of your CSS here*/
+
+h1 {
+    text-align: center;
+    margin: 20px;
+}
+
+form {
+    width: 40%;
+    margin: 0 auto;
+}
+
+form span {
+    color: red;
+    font-size: 12px;
+}
+
+form input, form select {
+    margin-bottom: 10px;
+}
+
+.btn {
+    margin: 10px auto;
+}

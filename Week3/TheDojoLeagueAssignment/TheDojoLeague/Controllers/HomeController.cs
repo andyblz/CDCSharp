@@ -38,26 +38,33 @@ namespace TheDojoLeague.Controllers
 
         [HttpPost]
         [Route("/register/ninja")]
-        public IActionResult RegisterNinja(Ninja ninja)
+        public IActionResult RegisterNinja(NinjaView model)
         {
             if (ModelState.IsValid)
             {
+                Ninja ninja = new Ninja
+                {
+                    name = model.name,
+                    level = model.level,
+                    dojo_id = model.dojo_id
+                };
+
                 ninjaFactory.AddNewNinja(ninja);
                 return RedirectToAction("Index");   
             }
-            return RedirectToAction("Index");
+            return View(model);
         }
 
-        [HttpPost]
-        [Route("/register/dojo")]
-        public IActionResult RegisterDojo(Dojo dojo)
-        {
-            if (ModelState.IsValid)
-            {
-                dojoFactory.RegisterDojo(dojo);
-                return RedirectToAction("Dojos"); 
-            }
-            return View("Dojos");        
-        }
+        // [HttpPost]
+        // [Route("/register/dojo")]
+        // public IActionResult RegisterDojo(Dojo model)
+        // {
+        //     if (ModelState.IsValid)
+        //     {
+        //         dojoFactory.RegisterDojo(dojo);
+        //         return RedirectToAction("Dojos"); 
+        //     }
+        //     return View(model);        
+        // }
     }
 }

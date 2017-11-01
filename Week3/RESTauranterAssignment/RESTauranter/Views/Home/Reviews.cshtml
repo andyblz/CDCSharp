@@ -1,0 +1,23 @@
+@{
+    ViewData["Title"] = "Review";
+}
+
+<h1>REVIEWS</h1>
+
+@foreach(var review in ViewBag.Reviews)
+{
+    <h2>Review for: @review.restaurantName</h2>
+    <h3>Reviewer: @review.reviewer, @review.created_at</h3>
+    @if (review.rating == 1)
+    {
+        <h4>Rating: @review.rating star</h4>
+    }
+    else
+    {
+        <h4>Rating: @review.rating stars</h4>        
+    }
+    <p>@review.review</p>
+    <hr>
+}
+
+<a href="/">GO BACK</a>

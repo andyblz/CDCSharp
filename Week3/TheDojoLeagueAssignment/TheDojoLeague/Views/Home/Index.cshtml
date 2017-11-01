@@ -14,12 +14,15 @@
             </tr>
         </thead>
         <tbody>
-            @foreach(var ninja in ViewBag.Ninjas)
+            @if(ViewBag.Ninjas != null)
             {
-                <tr>
-                    <td>@ninja.name</td>
-                    <td>@ninja.dojo</td>
-                </tr>
+                @foreach(var ninja in ViewBag.Ninjas)
+                {
+                    <tr>
+                        <td>@ninja.name</td>
+                        <td>@ninja.dojo</td>
+                    </tr>
+                }
             }
         </tbody>
     </table>
@@ -39,10 +42,12 @@
         <label asp-for="dojo_id">ASSIGN DOJO?</label>
         <span asp-validation-for="dojo_id"></span>
         <select asp-for="dojo_id" placeholder="Select A Dojo">
-            <option asp-for="dojo" value="0" selected>Rogue (default)</option>
-            @foreach(var dojo in ViewBag.Dojos)
-            {
-                <option asp-for="dojo" value="@dojo.id">@dojo.name</option>
+            <option value="null" selected>Rogue (default)</option>
+            @{
+                foreach(var dojo in ViewBag.Dojos)
+                {
+                    <option value="@dojo.id">@dojo.name</option>
+                }
             }
         </select> 
 
