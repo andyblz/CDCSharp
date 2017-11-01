@@ -5,7 +5,32 @@
 
 <form class="search-movie">
     <label for="movie">SEARCH FOR A MOVIE:</label>
-    <input type="text" name="movie-name" placeholder="Movie Name"/>
+    <input type="text" name="movieName" placeholder="Movie Name"/>
+    <button type="submit" class="btn">SEARCH</button>
 </form>
 
+<article class="movie-selected">
+    <p>@ViewBag.MovieTitle</p>
+</article>
+
 <hr>
+
+<article class="all-movies">
+    @{
+        if(ViewBag.Movies != null)
+        {
+            for(var i = 0; i < @ViewBag.Movies.Count; i++)
+            {
+                <p>@ViewBag.Movies[i]["title"]</p>
+            }
+        }
+    }
+</article>
+
+
+@section Scripts
+{
+    <script>
+
+    </script>
+}
