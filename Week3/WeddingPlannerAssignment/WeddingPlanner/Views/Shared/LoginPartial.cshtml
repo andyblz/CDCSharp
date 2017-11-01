@@ -1,0 +1,15 @@
+@model WeddingPlanner.Models.LoginView
+
+<form asp-action="Login" method="post" class="login-form" asp-controller="Home">
+    <label for="loginEmail">Email</label> 
+    <span asp-validation-for="loginEmail"></span>
+    <input type="email" asp-for="loginEmail" class="form-control" placeholder="Your Email"/>
+
+    <label for="loginPassword">Password</label> 
+    <span asp-validation-for="loginPassword"></span>
+    <input type="password" asp-for="loginPassword" class="form-control" placeholder="Your Password"/>
+
+    <button type="submit" class="btn btn-primary">LOGIN</button>
+    
+    <p>Don't have an account? <a href="/">Register here.</a></p>
+</form>

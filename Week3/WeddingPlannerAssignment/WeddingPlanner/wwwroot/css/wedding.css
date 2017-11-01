@@ -1,0 +1,37 @@
+/* Wedding styling */
+body {
+    font-family: 'Catamaran', sans-serif;
+    height: 100%;
+    color: rgb(80, 80, 80);
+    background-color: lightblue;
+}
+
+.navbar {
+    text-align: left;
+    background-color: rgba(255, 255, 255, 0.65);
+    padding: 20px;   
+    margin-top: 20px; 
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 100%;
+}
+
+.navbar h1, .navbar h3, .navbar-link {
+    margin: 0 20px;
+    display: inline-block;
+}
+
+#main {
+    margin-top: 100px;
+    text-align: center;
+}
+
+.table {
+    width: 50%;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;    
+}
+
+.table th {
+    text-align: center;
+}

@@ -1,0 +1,35 @@
+@{
+    ViewData["Title"] = "HOME";
+    Layout = "~/Views/Shared/_WeddingLayout.cshtml";
+}
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <h1>Wedding Planner</h1>
+    <h3>Welcome, @ViewBag.LoggedUserName.first_name!</h3>
+    <a class="nav-link" href="logout">LOGOUT</a>
+</nav>
+
+<div id="main">
+    <table class="table table-striped">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col">WEDDING</th>
+                <th scope="col">DATE</th>
+                <th scope="col">GUEST</th>
+                <th scope="col">ACTION</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><a href="#">someone</a></td>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>RSVP</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <form asp-action="WeddingForm" method="get" asp-controller="Wedding">
+        <button type="submit" class="btn btn-primary">NEW WEDDING</button>
+    </form>
+</div>
