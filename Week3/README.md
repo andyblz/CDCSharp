@@ -16,6 +16,7 @@ Simple app that allows users to submit reviews of restaurants. Utilizes the Enti
 **NOT COMPLETE. Didn't include bonus assignment (visitors can rate each review helpful/unhelpful).**
 
 ### WeddingPlannerAssignmet
-**NOT COMPLETE.**
+Created an app that allows users to login/register, and add or RSVP to a wedding. Utilizes Entity Framework Core, securing database, and SQL relationships.  
+**NOT COMPLETE. Only log/reg completed.**
 
 
