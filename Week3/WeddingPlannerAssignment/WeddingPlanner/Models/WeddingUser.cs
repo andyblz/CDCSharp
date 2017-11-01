@@ -7,12 +7,12 @@ namespace WeddingPlanner.Models
     public class WeddingUser : BaseEntity
     {
         [Key]
-        public int weddingsUsersId { get; set; }
+        public int rsvpId { get; set; }
         
-        public int rsvpduser_userId { get; set; }
+        public int userId { get; set; }
         public User user { get; set; }
 
-        public int weddingrsvpd_weddingId { get; set; }
+        public int weddingId { get; set; }
         public Wedding wedding { get; set; }
     }
 }

@@ -15,14 +15,20 @@ body {
     width: 100%;
 }
 
-.navbar h1, .navbar h3, .navbar-link {
+.navbar h1, .navbar h3, .nav-link {
     margin: 0 20px;
     display: inline-block;
+    vertical-align: middle;
+}
+
+.nav-link {
+    margin: 0 30px;
 }
 
 #main {
-    margin-top: 100px;
+    margin-top: 50px;
     text-align: center;
+    padding: 0 100px;
 }
 
 .table {
@@ -34,4 +40,39 @@ body {
 
 .table th {
     text-align: center;
+}
+
+.table-striped {
+    background-color: rgb(230, 230, 230);
+}
+
+.wedding-form {
+    text-align: left;
+    background-color: rgba(255, 255, 255, 0.65);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 20px;
+    margin: 30px 30px;
+    width: 30%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.wedding-form input {
+    margin-bottom: 5px;
+}
+
+form .btn {
+    margin: 10px auto 0 auto;
+    display: block;
+    text-align: center;
+}
+
+.wedding-form span {
+    color: red;
+    font-size: 10px;
+}
+
+#main h2 {
+    text-align: left;
+    margin:
 }

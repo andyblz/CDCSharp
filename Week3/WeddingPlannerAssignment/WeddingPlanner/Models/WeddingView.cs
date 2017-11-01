@@ -19,10 +19,9 @@ namespace WeddingPlanner.Models
         [Display(Name = "wedder two")]
         public string wedderTwo { get; set; }
 
-        [Required]
-        [DataType(DataType.Date)]
+        [Required(ErrorMessage = "Wedding date is required.")]
         [Display(Name = "wedding date")]
-        public DateTime weddingDate { get; set; }
+        public DateTime? weddingDate { get; set; }
 
         [Required]
         [MinLength(1)]

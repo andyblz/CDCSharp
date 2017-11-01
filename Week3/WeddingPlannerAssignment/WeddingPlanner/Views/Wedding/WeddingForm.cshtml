@@ -1,15 +1,35 @@
+@{
+    ViewData["Title"] = "ADD WEDDING";
+    Layout = "~/Views/Shared/_WeddingLayout.cshtml";
+}
+
 @model WeddingPlanner.Models.WeddingView
 
-<form asp-action="AddWedding" method="post" class="wedding-form" asp-controller="Wedding">
-    <label for="loginEmail">Email</label> 
-    <span asp-validation-for="loginEmail"></span>
-    <input type="email" asp-for="loginEmail" class="form-control" placeholder="Your Email"/>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <h1>Plan Your Wedding</h1>
+    <a class="nav-link" href="/wedding">DASHBOARD</a>
+    <a class="nav-link" href="/logout">LOGOUT</a>
+</nav>
 
-    <label for="loginPassword">Password</label> 
-    <span asp-validation-for="loginPassword"></span>
-    <input type="password" asp-for="loginPassword" class="form-control" placeholder="Your Password"/>
+<div id="main">
+    <form asp-action="AddWedding" method="post" class="wedding-form" asp-controller="Wedding">
+        <input type="hidden" name="plannerId" value="@ViewBag.LoggedUser.userId"></input>
+        <label for="wedderOne">Wedder one</label> 
+        <span asp-validation-for="wedderOne"></span>
+        <input type="text" asp-for="wedderOne" class="form-control" placeholder="Wedder One"/>
 
-    <button type="submit" class="btn btn-primary">LOGIN</button>
-    
-    <p>Don't have an account? <a href="/">Register here.</a></p>
-</form>
+        <label for="wedderTwo">Wedder Two</label> 
+        <span asp-validation-for="wedderTwo"></span>
+        <input type="text" asp-for="wedderTwo" class="form-control" placeholder="Wedder Two"/>
+
+        <label for="weddingDate">Wedding Date</label> 
+        <span asp-validation-for="weddingDate"></span>
+        <input type="date" asp-for="weddingDate" min="@ViewBag.DateTimeNow" class="form-control" placeholder="Wedding Date"/>
+
+        <label for="address">Address</label> 
+        <span asp-validation-for="address"></span>
+        <input type="text" asp-for="address" class="form-control" placeholder="Wedding Address"/>
+
+        <button type="submit" class="btn btn-primary">ADD WEDDING</button>
+    </form>
+</div>

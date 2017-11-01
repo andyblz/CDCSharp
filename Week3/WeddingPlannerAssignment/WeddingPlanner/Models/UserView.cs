@@ -45,9 +45,9 @@ namespace WeddingPlanner.Models
         public string loginPassword { get; set; }
     }
 
-    // public class LogReg
-    // {
-    //     public RegisterView registerUser { get; set;}
-    //     public LoginView loginUser { get; set; }
-    // }
+    public class LogReg
+    {
+        public RegisterView registerUser { get; set;}
+        public LoginView loginUser { get; set; }
+    }
 }

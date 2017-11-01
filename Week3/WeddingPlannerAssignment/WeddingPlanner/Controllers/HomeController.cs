@@ -23,14 +23,7 @@ namespace WeddingPlanner.Controllers
 
         [HttpGet]
         [Route("")]
-        public IActionResult IndexR()
-        {
-            return View();
-        }
-
-        [HttpGet]
-        [Route("indexL")]
-        public IActionResult IndexL()
+        public IActionResult Index()
         {
             return View();
         }
@@ -75,7 +68,7 @@ namespace WeddingPlanner.Controllers
                     return RedirectToAction("WeddingIndex", "Wedding");
                 } 
             }
-            return View("IndexR", regModel);
+            return View("Index");
         }
 
         [HttpPost]
@@ -106,7 +99,7 @@ namespace WeddingPlanner.Controllers
                     ModelState.AddModelError("loginPassword", "Password is incorrect.");
                 }
             }
-            return View("IndexL", logModel);
+            return View("Index");
         }
 
         [HttpGet]
@@ -114,7 +107,7 @@ namespace WeddingPlanner.Controllers
         public IActionResult Logout()
         {
             HttpContext.Session.Clear();
-            return RedirectToAction("IndexL");
+            return RedirectToAction("Index");
         }
     }
 }
