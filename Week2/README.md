@@ -19,6 +19,7 @@ Working with model binding & validations. A user can submit a form with their in
 Created a login & registration page, that utilizes session, MySQL, model binding & validations, as well as Partial views. A user can register an account or login. The validations check whether the user is already registered, if passwords match, and whether the rest of the fields are valid. If validations pass, the user is redirected to a "Success" page.
 
 ### MovieAPIAssignment
+App that utilizes AJAX and TMDB API. Allow users to search for a movie, and save the result to the database.
 **NOT COMPLETE.**
 
 ### PokeInfoAssignment
