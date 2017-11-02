@@ -16,10 +16,6 @@ namespace WeddingPlanner.Models
 
 
         // Add user/wedding many-many relationship here.
-        public ICollection<WeddingUser> Weddings { get; set; }
-        public User()
-        {
-            Weddings = new List<WeddingUser>();
-        }
+        public List<WeddingUser> RSVPs { get; set; }
     }
 }

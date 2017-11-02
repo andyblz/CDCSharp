@@ -5,6 +5,12 @@ using System.Collections.Generic;
 
 namespace WeddingPlanner.Models
 {
+    public class Dashboard : BaseEntity
+    {
+        public List<Wedding> Weddings { get; set; }
+        public User User { get; set; }
+    }
+    
     public class WeddingView : BaseEntity
     {
         [Required]

@@ -3,10 +3,14 @@
     Layout = "~/Views/Shared/_WeddingLayout.cshtml";
 }
 
+@model WeddingPlanner.Models.Dashboard
+@using WeddingPlanner.Models;
+
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <h1>Wedding Planner</h1>
     <h3>Welcome, @ViewBag.LoggedUser.first_name!</h3>
-    <a class="nav-link" href="logout">LOGOUT</a>
+    <a class="nav-link" href="/logout">LOGOUT</a>
 </nav>
 
 <div id="main">
@@ -20,7 +24,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach(var wedding in ViewBag.AllWeddings)
+           @foreach(Wedding wedding in Model.Weddings)
             {
                 <tr>
                     <td><a href="wedding/info/@wedding.weddingId">@wedding.wedder_one &amp; @wedding.wedder_two</a></td>
@@ -28,18 +32,24 @@
                     <td>@wedding.Guests.Count</td>
                     @if (wedding.userId != ViewBag.LoggedUser.userId)
                     {
-                        @if (2 == 2)
+                        @if (wedding.Guests.Where(guest => guest.userId == ViewBag.LoggedUser.userId).SingleOrDefault() == null)
                         {
-                            <td><a href="/wedding/rsvp" name="weddingId" value="@wedding.weddingId">RSVP</a></td>
+                            <td>
+                                <a href="/wedding/rsvp/@wedding.weddingId">RSVP</a>
+                            </td>
                         }
                         else
                         {
-                            <td><a href="#">UNRSVP</a></td>
+                            <td>
+                                <a href="/wedding/cancel/@wedding.weddingId">UNRSVP</a>
+                            </td>
                         }
                     }
                     else
                     {
-                        <td><a href="#">DELETE</a></td>
+                        <td>
+                            <a href="/wedding/delete/@wedding.weddingId">DELETE</a>
+                        </td>
                     }
                 </tr>
             }

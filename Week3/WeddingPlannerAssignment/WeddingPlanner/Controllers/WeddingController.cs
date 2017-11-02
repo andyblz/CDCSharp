@@ -5,8 +5,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
-using WeddingPlanner.Models;
 using Microsoft.AspNetCore.Identity;
+using WeddingPlanner.Models;
 
 
 namespace WeddingPlanner.Controllers
@@ -20,6 +20,21 @@ namespace WeddingPlanner.Controllers
             _context = context;
         }
 
+        // Get today's date.
+        private string ReturnCurrentDate()
+        {
+            String dateNow = DateTime.Now.ToString("yyyy-MM-dd");
+            return dateNow;
+        }
+
+        // Get logged user.
+        private User ReturnLoggedUser()
+        {
+            int? loggedUserId = HttpContext.Session.GetInt32("loggedUserID");
+            User loggedUser = _context.users.SingleOrDefault(user => user.userId == loggedUserId);
+            return loggedUser;
+        }
+
 
         [HttpGet]
         [Route("wedding")]
@@ -29,14 +44,16 @@ namespace WeddingPlanner.Controllers
             {
                 return RedirectToAction("Index", "Home");
             }
-            
+
             ViewBag.LoggedUser = ReturnLoggedUser();
+            
+            Dashboard dashData = new Dashboard
+            {
+                Weddings = _context.weddings.Include(w => w.Guests).ToList(),
+                User = ReturnLoggedUser()
+            };
 
-            List<Wedding> allWeddings = _context.weddings.ToList();
-
-            ViewBag.AllWeddings = allWeddings;
-
-            return View();
+            return View(dashData);
         }
 
         [HttpGet]
@@ -65,9 +82,13 @@ namespace WeddingPlanner.Controllers
 
             ViewBag.LoggedUser = ReturnLoggedUser();
 
-            Wedding returnedWedding = _context.weddings.SingleOrDefault(wedding => wedding.weddingId == weddingId);
+            Wedding returnedWeddings = _context.weddings.SingleOrDefault(w => w.weddingId == weddingId);
 
-            ViewBag.WeddingInfo = returnedWedding;
+            List<WeddingUser> returnedGuest = _context.rsvps.Where(w => w.weddingId == weddingId)
+                                                        .Include(g => g.Guest)
+                                                        .ToList();
+
+            ViewBag.WeddingInfo = returnedWeddings;
 
             return View();
         }
@@ -91,7 +112,7 @@ namespace WeddingPlanner.Controllers
                     {
                         wedder_one = weddingModel.wedderOne,
                         wedder_two = weddingModel.wedderTwo,
-                        wedding_date = weddingModel.weddingDate,
+                        wedding_date = (DateTime)weddingModel.weddingDate,
                         address = weddingModel.address,
                         created_at = DateTime.Now,
                         updated_at = DateTime.Now,
@@ -114,7 +135,7 @@ namespace WeddingPlanner.Controllers
         }
 
         [HttpGet]
-        [Route("wedding/rsvp")]
+        [Route("wedding/rsvp/{weddingId}")]
         public IActionResult RSVP(int weddingId)
         {
             User LoggedUser = ReturnLoggedUser();
@@ -127,37 +148,42 @@ namespace WeddingPlanner.Controllers
 
             _context.Add(newRSVP);
             _context.SaveChanges();
-            
-            return View("WeddingIndex");
+
+            ViewBag.LoggedUser = ReturnLoggedUser();
+
+            return RedirectToAction("WeddingIndex");
         }
 
         [HttpGet]
-        [Route("wedding/cancel")]
-        public IActionResult CancelRSVP()
+        [Route("wedding/cancel/{weddingId}")]
+        public IActionResult CancelRSVP(int weddingId)
         {
-            return View("WeddingIndex");
+            User LoggedUser = ReturnLoggedUser();
+
+            WeddingUser cancelRSVP = _context.rsvps.Where(r => r.weddingId == weddingId).Where(r => r.userId == LoggedUser.userId).SingleOrDefault();
+
+            _context.Remove(cancelRSVP);
+            _context.SaveChanges();
+
+            ViewBag.LoggedUser = ReturnLoggedUser();
+
+            return RedirectToAction("WeddingIndex");
         }
 
         [HttpGet]
-        [Route("wedding/delete")]
-        public IActionResult DeleteWedding()
+        [Route("wedding/delete/{weddingId}")]
+        public IActionResult DeleteWedding(int weddingId)
         {
-            return View("WeddingIndex");
-        }
+            User LoggedUser = ReturnLoggedUser();
 
-        // Get today's date.
-        private string ReturnCurrentDate()
-        {
-            String dateNow = DateTime.Now.ToString("yyyy-MM-dd");
-            return dateNow;
-        }
+            Wedding deleteGuests = _context.weddings.SingleOrDefault(w => w.weddingId == weddingId);
 
-        // Get logged user.
-        private User ReturnLoggedUser()
-        {
-            int? loggedUserId = HttpContext.Session.GetInt32("loggedUserID");
-            User loggedUser = _context.users.SingleOrDefault(user => user.userId == loggedUserId);
-            return loggedUser;
+            _context.Remove(deleteGuests);
+            _context.SaveChanges();
+
+            ViewBag.LoggedUser = ReturnLoggedUser();
+
+            return RedirectToAction("WeddingIndex");
         }
     }
 }

@@ -14,4 +14,11 @@
     <h2>DATE: @ViewBag.WeddingInfo.wedding_date.Date.ToString("MMMM dd, yyyy")</h2>
     <h2>ADDRESS: @ViewBag.WeddingInfo.address</h2>
     <h2>GUESTS:</h2>
+        @if(ViewBag.WeddingInfo.Guests != null)
+        {
+            @foreach(var guest in ViewBag.WeddingInfo.Guests)
+            {
+                <p>@guest.Guest.first_name</p>
+            }
+        }
 </div>
