@@ -210,9 +210,9 @@ namespace TEMPLATE.Models
   + PMC `Add-Migration MIGRATIOFILENAME`.  
   + PMC `Update-Database`.  
 
-### 5. View Database. (VS Community, ASP.NET Core 2.0 MVC)
+### 5. View Database (VS Community, ASP.NET Core 2.0 MVC)
   + **View** > **SQL Server Object Explorer** > find the table database file.  
   + Right-click, **View Designer** or **View Data**.  
 
-### 6. Add Session. (VS Community, ASP.NET Core 2.0 MVC???)
+### 6. Add Session (VS Community, ASP.NET Core 2.0 MVC???)
   + ~~CP `dotnet add package Microsoft.AspNetCore.Session -v=1.1`.~~
