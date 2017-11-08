@@ -1,0 +1,109 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Carousel */
+.carousel-caption p {
+    font-size: 20px;
+    line-height: 1.4;
+}
+
+/* Make .svg files in the carousel display properly in older browsers */
+.carousel-inner .item img[src$=".svg"] {
+    width: 100%;
+}
+
+/* QR code generator */
+#qrCode {
+    margin: 15px;
+}
+
+/* Hide/rearrange for smaller screens */
+@media screen and (max-width: 767px) {
+    /* Hide captions */
+    .carousel-caption {
+        display: none;
+    }
+}
+
+/* Custom styling */
+body {
+    font-family: 'Catamaran', sans-serif;
+    height: 100%;
+    background-image: url("../images/oldman.jpg");
+    background-repeat: no-repeat;
+    background-position: top left;
+    background-attachment: fixed;
+    background-size: 100%;
+}
+
+h1 {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.65);
+    padding: 20px;
+    margin-top: 40px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 100%;
+}
+
+#main {
+    text-align: center;
+}
+
+.register-form, .login-form {
+    text-align: left;
+    background-color: rgba(255, 255, 255, 0.65);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 20px;
+    margin: 30px 30px;
+    width: 30%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+    .register-form label, .login-form label {
+        text-align: left;
+    }
+
+    .register-form input, .login-form input {
+        margin-bottom: 5px;
+    }
+
+#emailHelp {
+    display: block;
+}
+
+form .btn {
+    margin: 10px auto 0 auto;
+    display: block;
+    text-align: center;
+}
+
+.login-form span, .register-form span {
+    color: red;
+    font-size: 10px;
+}
+
+.login-form p, .register-form p {
+    text-align: center;
+    margin: 10px;
+}
+
+/* jfeng credit link to Github */
+#credit {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.65);
+    padding: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}

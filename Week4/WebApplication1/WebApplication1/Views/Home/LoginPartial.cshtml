@@ -1,0 +1,13 @@
+﻿@model WebApplication1.Models.LoginView
+
+<form asp-action="Login" method="post" class="login-form" asp-controller="Home">
+    <label for="LoginEmail">Email</label>
+    <span asp-validation-for="LoginEmail"></span>
+    <input type="email" asp-for="LoginEmail" class="form-control" placeholder="Your Email" />
+
+    <label for="LoginPassword">Password</label>
+    <span asp-validation-for="LoginPassword"></span>
+    <input type="password" asp-for="LoginPassword" class="form-control" placeholder="Your Password" />
+
+    <button type="submit" class="btn btn-primary">LOGIN</button>
+</form>
