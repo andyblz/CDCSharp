@@ -9,6 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using WebApplication1.Data;
 using Microsoft.EntityFrameworkCore;
 using WebApplication1.Properties;
+using WebApplication1.Models;
 
 namespace WebApplication1
 {
@@ -36,11 +37,11 @@ namespace WebApplication1
         public void ConfigureServices(IServiceCollection services)
         {
             // INFO: For securing the Db.
-            services.Configure<MySqlOptions>(Configuration.GetSection("DBInfo"));
+            services.Configure<MySqlOptions>(Configuration.GetSection("DefaultConnection"));
             services.AddScoped<HomeContext>();
 
             // INFO: For Entity Framework Core.
-            services.AddDbContext<HomeContext>(options => options.UseSqlServer(Configuration["DBInfo:ConnectionString"]));
+            services.AddDbContext<HomeContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddMvc();
             services.AddSession();

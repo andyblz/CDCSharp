@@ -23,8 +23,21 @@ namespace WebApplication1.Models
         public string Password { get; set; }
 
         [Required]
-        [Compare("password", ErrorMessage = "Passwords must match.")]
+        [Compare("Password", ErrorMessage = "Passwords must match.")]
         [Display(Name = "password")]
         public string ConfirmPassword { get; set; }
+    }
+
+    public class LoginView
+    {
+        [Required]
+        [EmailAddress]
+        [Display(Name = "email")]
+        public string LoginEmail { get; set; }
+
+        [Required]
+        [MinLength(8)]
+        [Display(Name = "password")]
+        public string LoginPassword { get; set; }
     }
 }

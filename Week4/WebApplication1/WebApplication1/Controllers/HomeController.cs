@@ -20,6 +20,13 @@ namespace WebApplication1.Controllers
             _context = context;
         }
 
+        private User ReturnLoggedUser()
+        {
+            int? loggedUserId = HttpContext.Session.GetInt32("loggedUserID");
+            User loggedUser = _context.Users.SingleOrDefault(user => user.UserId == loggedUserId);
+            return loggedUser;
+        }
+
         // INFO: Home/index page.
         [HttpGet]
         [Route("")]
@@ -75,13 +82,49 @@ namespace WebApplication1.Controllers
             return View("Index");
         }
 
+        // INFO: Log in a user.
+        [HttpPost]
+        [Route("login")]
+        public IActionResult Login(LoginView logModel)
+        {
+            TryValidateModel(logModel);
+            if (ModelState.IsValid)
+            {
+                // Get any email that matches user's inputted email from database.
+                User returnedUser = _context.Users.SingleOrDefault(user => user.Email == logModel.LoginEmail);
+
+                // If no match, throw error to register.
+                if (returnedUser == null)
+                {
+                    ModelState.AddModelError("LoginEmail", "This email doesn't exist. Please register an account.");
+                }
+                else
+                {
+                    // Unhash the user's password.
+                    var hashedPassword = new PasswordHasher<User>();
+                    if (hashedPassword.VerifyHashedPassword(returnedUser, returnedUser.Password, logModel.LoginPassword) != 0)
+                    {
+                        HttpContext.Session.SetInt32("loggedUserID", Convert.ToInt32(returnedUser.UserId));
+                        return RedirectToAction("Success");
+                    }
+
+                    ModelState.AddModelError("LoginPassword", "Password is incorrect.");
+                }
+            }
+            return View("Index");
+        }
+
         // Display success page.
         [HttpGet]
         [Route("success")]
         public IActionResult Success()
         {
-            int? loggedUserId = HttpContext.Session.GetInt32("loggedUserID");
-            ViewBag.LoggedUser = _context.Users.SingleOrDefault(user => user.UserId == loggedUserId);
+            if (ReturnLoggedUser() == null)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
+            ViewBag.LoggedUser = ReturnLoggedUser();
             return View("Success");
         }
 

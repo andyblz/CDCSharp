@@ -11,7 +11,7 @@ using WebApplication1.Data;
 namespace WebApplication1.Migrations
 {
     [DbContext(typeof(HomeContext))]
-    [Migration("20171107233807_UserMigrations")]
+    [Migration("20171108023504_UserMigrations")]
     partial class UserMigrations
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
