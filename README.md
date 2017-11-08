@@ -1,11 +1,9 @@
 # ASP.NET CORE REFERENCE
 Reference to self for how to set up an ASP.NET CORE app.
 
-### 1. Setup App
+### 1. Setup App (VS Code, ASP.NET Core 1.0 MVC with Candyman)
   + Make a **main** folder.
-  + Add a **test** folder.
-
-### 2. Inside **Main** Folder
+  + Add a **test** folder.  
   + Inside the **main** folder, CP `yo candyman <appName>`.
   + Go into the **app** folder, and inside **appName.csproj**, add the following code to setup Watcher tool:  
   ```  
@@ -15,13 +13,11 @@ Reference to self for how to set up an ASP.NET CORE app.
   ```
   + CP `set ASPNETCORE_ENVIRONMENT=Development`.
   + CP `dotnet restore`.
-
-### 3. Inside **Test** Folder
-  + CP `dotnet new xunit`.
+  + Inside the **test** folder, CP `dotnet new xunit`.
   + CP `dotnet add reference ../<appName>/<appName>.csproj`.
   + Inside **Unit1Test.cs**, add `using <appName>;` and `using <appName>.Controllers;`.
 
-### Using Model Binding & Validations
+### 2. Using Model Binding & Validations & Partials (VS Code, ASP.NET Core 1.0 MVC with Candyman)
   + In your model validation **.cs** page, add `using System.ComponentModel.DataAnnotations;`.
   + In your model, **Example.cs**:
   ```
@@ -49,7 +45,7 @@ namespace YourNamespace.Controllers
     {
         if(ModelState.IsValid)
         {
-            //Handle success
+            // Handle success
         }
         return View(user);
     }
@@ -74,12 +70,10 @@ namespace YourNamespace.Controllers
     <button type="submit">Create new User</button>
 </form>
   ```
-
-### Using Partials
   + To add Partials, in your **Example.cshtml**, add `@Html.Partial("ExampleModel")`.
   + To add your model to your Partial, add `@model LoginRegistration.Models.Login`.
 
-### Securing Databases
+### 3. Securing Databases (VS Community, ASP.NET Core 2.0 MVC???)
   + Add to **appsettings.json**:
   ```
 {
@@ -88,17 +82,19 @@ namespace YourNamespace.Controllers
         "LogLevel": {
             "Default": "Warning"
         }
-    },
-
-    "DBInfo":
-    {
-        "Name": "MySQLconnect",
-        "ConnectionString": "server=localhost;userid=root;password=root;port=3306;database=DATEBASENAME;SslMode=None"
-    }
+    },  
+    "ConnectionStrings": {  
+        "DefaultConnection": "Server=(localdb)\\mssqllocaldb;Database=PROJECTNAME;Trusted_Connection=True;MultipleActiveResultSets=true"  
+    }  
+    // "DBInfo":
+    // {
+    //    "Name": "MySQLconnect",
+    //    "ConnectionString": "server=localhost;userid=root;password=root;port=3306;database=DATEBASENAME;SslMode=None"
+    // }
 }
   ```
-  + CP `dotnet add package MySql.Data -v 7.0.7-*`.
-  + Under a **Properties** folder, created a **MySqlOption.cs** file, and add:
+  + ~~CP `dotnet add package MySql.Data -v 7.0.7-*`.~~
+  + ~~Under a **Properties** folder, created a **MySqlOption.cs** file, and add:~~
   ```
 namespace TEMPLATE
 {
@@ -109,7 +105,52 @@ namespace TEMPLATE
     }
 }
   ```
-  + Add to **.csproj** file:
+  + Add to the **Startup.cs** file:
+  ```
+public IConfiguration Configuration { get; private set; }
+ 
+public Startup(IHostingEnvironment env)
+{
+    var builder = new ConfigurationBuilder()
+    .SetBasePath(env.ContentRootPath)
+    .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+    .AddEnvironmentVariables();
+    Configuration = builder.Build();
+}
+
+public void ConfigureServices(IServiceCollection services)
+
+{
+
+      // INFO: For securing db.
+
+      services.Configure<MySqlOptions>(Configuration.GetSection("DefaultConnection"));
+
+      services.AddScoped<TEMPLATEContext>();
+
+
+      
+      // INFO: Added this for Entity Framework Core
+
+      services.AddDbContext<TEMPLATEContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+}
+  ```
+  + Add to **YourController.cs**:
+  ```
+using Microsoft.EntityFrameworkCore;
+using TEMPLATE.Models;
+  
+private TEMPLATEContext _context;
+  
+public HomeController(TEMPLATEContext context)
+{
+
+  _context = context;
+
+}
+  ```
+  + ~~Add packages to **.csproj** file:~~
   ```
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
@@ -145,70 +186,9 @@ namespace TEMPLATE
   </ItemGroup>
 </Project>
 ```
-  + Add to the **Startup.cs** file:
-  ```
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
 
-using Microsoft.Extensions.Configuration;
-using Microsoft.AspNetCore.Hosting;
-
-using Microsoft.EntityFrameworkCore;
-using MySQL.Data.EntityFrameworkCore;
-using MySQL.Data.EntityFrameworkCore.Extensions;
-using TEMPLATE.Models;
-
- 
-public IConfiguration Configuration { get; private set; }
- 
-public Startup(IHostingEnvironment env)
-{
-    var builder = new ConfigurationBuilder()
-    .SetBasePath(env.ContentRootPath)
-    .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
-    .AddEnvironmentVariables();
-    Configuration = builder.Build();
-}
-
-public void ConfigureServices(IServiceCollection services)
-
-{
-
-      // INFO: For securing db.
-
-      services.Configure<MySqlOptions>(Configuration.GetSection("DBInfo"));
-
-      services.AddScoped<TEMPLATEContext>();
-
-
-      
-      // INFO: Added this for Entity Framework Core
-
-      services.AddDbContext<TEMPLATEContext>(options => options.UseMySQL(Configuration["DBInfo:ConnectionString"]));
-
-}
-  ```
-  + Add to **YourController.cs**:
-  ```
-using Microsoft.EntityFrameworkCore;
-using TEMPLATE.Models;
-  
-private TEMPLATEContext _context;
-  
-public HomeController(TEMPLATEContext context)
-{
-
-  _context = context;
-
-}
-  ```
-
-### Using Entity Framework
-  + CP `dotnet add package MySql.Data.EntityFrameworkCore -v 7.0.7-*`.  
+### 4. Using Entity Framework Core (VS Community, ASP.NET Core 2.0 MVC???)
+  + ~~CP `dotnet add package MySql.Data.EntityFrameworkCore -v 7.0.7-*`.~~  
   + Add a **TEMPLATEContext.cs** file:
   ```
 using Microsoft.EntityFrameworkCore;
@@ -224,6 +204,11 @@ namespace TEMPLATE.Models
     }
 }
   ```
+  + PMC `Install-Package Microsoft.EntityFrameworkCore.SqlServer`.  
+  + PMC `Install-Package Microsoft.EntityFrameworkCore.Tools`.  
+  + PMC `Install-Package Microsoft.VisualStudio.Web.CodeGeneration.Design`.  
+  + PMC `Add-Migration MIGRATIOFILENAME`.  
+  + PMC `Update-Database`.  
 
-### Add Session.
-  + CP `dotnet add package Microsoft.AspNetCore.Session -v=1.1`.
+### 5. Add Session. (VS Community, ASP.NET Core 2.0 MVC???)
+  + ~~CP `dotnet add package Microsoft.AspNetCore.Session -v=1.1`.~~
